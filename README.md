@@ -8,4 +8,4 @@ For years, front-end developers have turned to preprocessors like Sass and Coffe
 * **step-two:** jQuery removed, and System.js added.
 * **step-three:** JSPM added and configured to work with System.js.
 
-If you lose your place during the workshop, check out the corresponding branch to see the completed step.
+If you lose your place during the workshop, check out the corresponding branch to see the completed code.

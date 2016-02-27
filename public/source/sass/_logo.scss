@@ -1,0 +1,43 @@
+.logo-bar {
+	background-color: $color-offwhite;
+	border-bottom: 0.25rem solid $color-gray-dark;
+	padding: 1.5rem 0;
+
+	.wrapper {
+		@include align-items(center);
+		@include display-flex;
+		@include justify-content(space-between);
+	}
+
+}
+
+.logo-section {
+	@include align-items(center);
+	@include display-flex;
+}
+
+.logo {
+	display: inline-block;
+	height: 5.1875rem;
+	margin-right: 2rem;
+	width: 5.1875rem;
+}
+
+.page-title {
+	display: inline-block;
+	font-size: 2.25rem;
+	margin: 0;
+
+	a {
+		color: $color-gray;
+	}
+	
+}
+
+@media screen and (min-width: 48rem) {
+
+	.page-title {
+		font-size: 3.125rem;
+	}
+
+}

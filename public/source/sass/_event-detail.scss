@@ -1,0 +1,123 @@
+.event-detail {
+	@include display-flex;
+	@include flex-wrap(wrap);
+	max-width: 62.125rem;
+
+	&__header {
+		margin: 1.5rem 0;
+		width: 100%;
+
+		h2 {
+			margin-bottom: 0.5rem;
+		}
+
+		.event__festival-types {
+			margin-bottom: 1.5rem;
+		}
+
+	}
+
+	
+
+	&__article {
+		@include flex(1);
+	}
+
+	&__meta-wrapper {
+		@include align-items(center);
+		background-color: $color-gray-lighter;
+		@include display-flex;
+		margin-bottom: 1.625rem;
+		padding: 1.125rem 0;
+		text-align: center;
+	}
+
+	&__meta-column {
+		@include flex(1);
+		padding: 1.125rem 0;
+		position: relative;
+
+		&:after {
+			background-color: $color-gray-light;
+			content: "";
+			display: block;
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 0.0625rem;
+		}
+
+		&:last-child {
+
+			&:after {
+				display: none;
+			}
+
+		}
+
+	}
+
+	&__meta-social {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+			margin: 0 0.4375rem;
+		}
+
+	}
+
+	&__social {
+		border-radius: 50%;
+		color: $color-white;
+		display: block;
+		height: 2.25rem;
+		position: relative;
+		width: 2.25rem;
+
+		span {
+			display: none;
+		}
+
+		&:before {
+			font-size: 1.5rem;
+			left: 50%;
+			position: absolute;
+			top: 50%;
+			@include transform(translate(-50%, -50%));
+		}
+
+		&--twitter {
+			background-color: #00aadd;
+		}
+
+		&--facebook {
+			background-color: #345b98;
+		}
+
+	}
+
+	&__tags {
+		margin-bottom: 3rem;
+	}
+
+	&__sidebar {
+		@include flex(0 0 17rem);
+		margin-left: 2.625rem;
+
+		> * {
+			display: block;
+			text-align: center;
+			width: 100%;
+		}
+
+		> * + * {
+			margin-top: 1.125rem;
+		}
+
+	}
+
+}

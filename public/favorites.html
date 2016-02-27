@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Kicking Sass</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<header class="header">
+		<div class="app-bar">
+			<div class="wrapper">
+				<nav class="app-bar__nav">
+					<ul class="app-bar__nav-list">
+						<li class="app-bar__nav-list-item">
+							<a class="app-bar__nav-link" href="#">SXSW.com</a>
+						</li>
+						<li class="app-bar__nav-list-item">
+							<a class="app-bar__nav-link" href="#">Schedule</a>
+						</li>
+						<li class="app-bar__nav-list-item">
+							<a class="app-bar__nav-link" href="#">SXsocial</a>
+						</li>
+						<li class="app-bar__nav-list-item">
+							<a class="app-bar__nav-link" href="#">Register Today</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="app-bar__schedule">
+					<ul class="app-bar__schedule-list">
+						<li class="app-bar__schedule-item">Interactive: March 11–15</li>
+						<li class="app-bar__schedule-item">Film: March 11–19</li>
+						<li class="app-bar__schedule-item">Music: March 15–20</li>
+					</ul>
+					<a class="button button--user">Sign In</a>
+				</div>
+			</div>
+		</div>
+		<div class="logo-bar">
+			<div class="wrapper">
+				<div class="logo-section">
+					<a class="logo" href="index.html">
+						<img src="images/logo.jpg" alt="SXSW">
+					</a>
+					<h1 class="page-title"><a href="index.html">Schedule</a></h1>
+				</div>
+				<form class="search">
+					<fieldset>
+						<input class="search__input" type="text" placeholder="Search our events...">
+						<input class="search__submit" type="submit">
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+		
+		<div class="wrapper wrapper--narrow">
+			<aside class="utilities">
+				<a class="utilities__favorites-link" href="index.html">Show All Events</a>
+			</aside>
+			<h2>My Favorites</h2>
+			<section class="events">
+				<div class="events__group">
+					<div class="js-events-placeholder">
+				</div>
+			</section>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="wrapper">
+			<p class="disclaimer">&copy; 2015 - 2016 SXSW, LLC SXSW&reg;, SXSWedu&reg;, SXSW Eco&reg;, and SXSW V2V&reg; and South By Southwest&reg; are trademarks owned by SXSW, LLC. Any unauthorized use of these names, or variations of these names, is a violation of state, federal, and international trademark laws.</p>
+			<nav class="footer__nav">
+				<ul class="footer__nav-list">
+					<li class="footer__nav-list-item">
+						<a class="footer__nav-link" href="#">Help</a>
+					</li>
+					<li class="footer__nav-list-item">
+						<a class="footer__nav-link" href="#">Privacy Policy</a>
+					</li>
+					<li class="footer__nav-list-item">
+						<a class="footer__nav-link" href="#">Terms of Use</a>
+					</li>
+					<li class="footer__nav-list-item">
+						<a class="footer__nav-link" href="#">Feedback</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
+
+	<script type="text/html" id="event_tmpl">
+		<div class="event" id="<%=id%>">
+			<div class="event__column">
+				<div class="event__favorite-trigger icon--star is-active"><span>Favorite</span></div>
+				<a class="event__name" href="event-detail.html?eventid=<%=id%>"><%=title%></a>
+				<ul class="event__festival-types">
+					<li class="event__festival-type event__festival-type--<%=festivalType%>"><%=festivalType%></li>
+				</ul>
+			</div>
+			<div class="event__column">
+				<ul class="event__types">
+					<li class="event__types--type"><%=eventTypeDisplay%></li>
+					<li class="event__types--format"><a href="#"><%=format%></a></li>
+					<li class="event__types--category"><%=trackDisplay%></li>
+				</ul>
+			</div>
+			<div class="event__column">
+				<ul class="event__location">
+					<li><a href="#"><%=location1%></a></li>
+					<li><strong><%=location2%></strong></li>
+				</ul>
+			</div>
+			<div class="event__column">
+				<div class="event__date"><%=date%></div>
+				<div class="event__time"><%=time%></div>
+			</div>
+		</div>
+	</script>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/microtemplates.js"></script>
+	<script src="js/favorites.js"></script>
+</body>
+</html>

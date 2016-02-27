@@ -1,0 +1,19 @@
+.details {
+	margin-bottom: 6rem;
+
+	.section__heading {
+		margin-bottom: 2rem;
+	}
+
+	dl {
+		@include display-flex;
+		@include flex-wrap(wrap);
+	}
+
+	dt {
+		@include flex(0 0 6.625rem);
+		font-weight: 700;
+		text-align: right;
+	}
+
+}

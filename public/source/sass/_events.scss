@@ -1,0 +1,154 @@
+.events {
+	margin-bottom: 6rem;
+
+	&__group-header {
+		background-color: $color-gray-light;
+		color: $color-gray-darker;
+		font-weight: 700;
+		padding: 0.75rem;
+		text-align: center;
+	}
+
+}
+
+.event {
+	background-color: $color-offwhite;
+	border-bottom: 0.25rem solid $color-gray-lighter;
+
+	&:last-child {
+		border-bottom: 0;
+	}
+
+	&__column {
+		font-size: 0.875rem;
+		padding: 1.5rem;
+		position: relative;
+		text-align: center;
+
+		&:after {
+			background-color: $color-gray-lighter;
+			content: "";
+			display: block;
+			height: calc(100% - 2.25rem);
+			margin: 1.125rem 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 0.0625rem;
+		}
+
+		&:first-child {
+			padding-left: 4.5rem;
+			@include flex(3);
+			text-align: left;
+		}
+
+		&:last-child {
+
+			&:after {
+				display: none;
+			}
+
+		}
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+
+	}
+
+	&__favorite-trigger {
+		color: $color-gray-light;
+		font-size: 2rem;
+		left: 1.5rem;
+		position: absolute;
+		top: 50%;
+		@include transform(translate(0, -50%));
+		@include transition-property(color);
+		@include transition-duration(0.5s);
+
+		&:hover {
+			color: $color-gray;
+		}
+
+		&.is-active {
+			color: $color-gold;
+
+			&:hover {
+				color: $color-gold;
+			}
+
+		}
+
+		span {
+			display: none;
+		}
+
+	}
+
+	&__name {
+		display: block;
+		font-family: $font-family-secondary;
+		font-size: 1.125rem;
+		font-weight: 700;
+		margin-bottom: 0.25rem;
+	}
+
+	&__festival-types {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+		}
+
+	}
+
+	&__festival-type {
+		border-radius: 50%;
+		color: $color-white;
+		display: block;
+		font-size: 0.625rem;
+		height: 0.8125rem;
+		line-height: 1.5;
+		text-align: center;
+		width: 0.875rem;
+		
+		&--I {
+			background-color: $color-orange;
+		}
+
+		&--M {
+			background-color: $color-green;
+		}
+
+		&--F {
+			background-color: $color-blue;			
+		}
+
+	}
+
+	&__types {
+
+		&--type {
+			font-weight: 700;
+		}
+
+	}
+
+	&__time {
+		font-weight: 700;
+	}
+
+}
+
+@media screen and (min-width: 48rem) {
+
+	.event {
+		@include display-flex;
+	}
+
+}

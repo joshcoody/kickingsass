@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Kicking Sass</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body class="page--event-detail">
+	<header class="header">
+		<div class="app-bar">
+			<div class="wrapper">
+				<nav class="app-bar__nav">
+					<ul class="app-bar__nav-list">
+						<li class="app-bar__nav-list-item">
+							<a class="app-bar__nav-link" href="#">SXSW.com</a>
+						</li>
+						<li class="app-bar__nav-list-item">
+							<a class="app-bar__nav-link" href="#">Schedule</a>
+						</li>
+						<li class="app-bar__nav-list-item">
+							<a class="app-bar__nav-link" href="#">SXsocial</a>
+						</li>
+						<li class="app-bar__nav-list-item">
+							<a class="app-bar__nav-link" href="#">Register Today</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="app-bar__schedule">
+					<ul class="app-bar__schedule-list">
+						<li class="app-bar__schedule-item">Interactive: March 11–15</li>
+						<li class="app-bar__schedule-item">Film: March 11–19</li>
+						<li class="app-bar__schedule-item">Music: March 15–20</li>
+					</ul>
+					<a class="button button--user">Sign In</a>
+				</div>
+			</div>
+		</div>
+		<div class="logo-bar">
+			<div class="wrapper">
+				<div class="logo-section">
+					<a class="logo" href="index.html">
+						<img src="images/logo.jpg" alt="SXSW">
+					</a>
+					<h1 class="page-title"><a href="index.html">Schedule</a></h1>
+				</div>
+				<form class="search">
+					<fieldset>
+						<input class="search__input" type="text" placeholder="Search our events...">
+						<input class="search__submit" type="submit">
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+		<div class="wrapper">
+			<div class="js-event-detail-placeholder"></div>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="wrapper">
+			<p class="disclaimer">&copy; 2015 - 2016 SXSW, LLC SXSW&reg;, SXSWedu&reg;, SXSW Eco&reg;, and SXSW V2V&reg; and South By Southwest&reg; are trademarks owned by SXSW, LLC. Any unauthorized use of these names, or variations of these names, is a violation of state, federal, and international trademark laws.</p>
+			<nav class="footer__nav">
+				<ul class="footer__nav-list">
+					<li class="footer__nav-list-item">
+						<a class="footer__nav-link" href="#">Help</a>
+					</li>
+					<li class="footer__nav-list-item">
+						<a class="footer__nav-link" href="#">Privacy Policy</a>
+					</li>
+					<li class="footer__nav-list-item">
+						<a class="footer__nav-link" href="#">Terms of Use</a>
+					</li>
+					<li class="footer__nav-list-item">
+						<a class="footer__nav-link" href="#">Feedback</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
+
+	<script type="text/html" id="event_detail_tmpl">
+		<section class="event-detail">
+			<header class="event-detail__header">
+				<h2><%=title%></h2>
+				<ul class="event__festival-types">
+					<li class="event__festival-type event__festival-type--<%=festivalType%>"><%=festivalType%></li>
+				</ul>
+			</header>
+			<article class="event-detail__article">
+				<div class="event-detail__meta-wrapper">
+					<div class="event-detail__meta-column">
+						<strong><%=date%></strong><br>
+						<%=time%>
+					</div>
+					<div class="event-detail__meta-column">
+						<a href="#"><%=location1%></a><br>
+						<strong><%=location2%></strong>
+					</div>
+					<div class="event-detail__meta-column">
+						<ul class="event-detail__meta-social">
+							<li><a class="event-detail__social event-detail__social--twitter icon--twitter" href="#"><span>Twitter</span></a></li>
+							<li><a class="event-detail__social event-detail__social--facebook icon--facebook" href="#"><span>Facebook</span></a></li>
+						</ul>
+					</div>
+				</div>
+				<img src="images/events/event01.jpg" alt="Checkbox That Ruined My Life">
+				<div class="event-detail__article-description">
+					<p><%=description%></p>
+				</div>
+				<p class="event-detail__tags"><strong>Hashtags:</strong> <% for (var i = 0; i < hashtags.length; i++) { %>
+					#<%=hashtags[i]%> 
+				<% } %></p>
+				<div class="presenters">
+					<h2 class="section__heading">Presenters</h2>
+					<div class="js-presenters-placeholder"></div>
+				</div>
+				<div class="details">
+					<h2 class="section__heading">Details</h2>
+					<dl>
+						<dt>Access</dt>
+						<dd><%=access%></dd>
+					</dl>
+					<dl>
+						<dt>Format</dt>
+						<dd><%=format%></dd>
+					</dl>
+					<dl>
+						<dt>Event Type</dt>
+						<dd><%=eventTypeDisplay%></dd>
+					</dl>
+					<dl>
+						<dt>Track</dt>
+						<dd><%=trackDisplay%></dd>
+					</dl>
+					<dl>
+						<dt>Level</dt>
+						<dd><%=level%></dd>
+					</dl>
+					<dl>
+						<dt>Online</dt>
+						<dd><a href="<%=slides%>" target="_blank"><%=slides%></a></dd>
+					</dl>
+					<dl>
+						<dt>Tags</dt>
+						<dd>
+							<% for (var i = 0; i < tags.length; i++) { %> 
+								<%=tags[i]%> 
+							<% } %>
+						</dd>
+					</dl>
+				</div>
+			</article>
+			<aside class="event-detail__sidebar">
+				<a class="button" href="#">Venue Info</a>
+				<img src="https://maps.googleapis.com/maps/api/staticmap?center=Austin+Convention+Center,+Austin,+TX&size=272x272&key=AIzaSyAfvjwI0468ef7YizCbnfreOx_LjUUercU" alt="Venue">
+				<a class="button button--blue" href="#">Find Food Nearby</a>
+				<a class="button button--blue" href="#">Find Drinks Nearby</a>
+			</aside>
+		</section>
+	</script>
+	<script type="text/html" id="presenter_tmpl">
+		<div class="presenter">
+			<% if (image) { %>
+				<img class="presenter__image" src="<%=image%>" alt="<%=name%>">
+			<% } %>
+			<div class="presenter__content">
+				<% if (name) { %>
+					<h2 class="presenter__name"><%=name%></h2>
+				<% } %>
+				<% if (title) { %>
+					<h3 class="presenter__title"><%=title%></h3>
+				<% } %>
+				<% if (company) { %>
+					<h4 class="presenter__location"><%=company%></h4>
+				<% } %>
+				<% if (description) { %>
+					<p class="presenter__description"><%=description%></p>
+				<% } %>
+			</div>
+		</div>
+	</script>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/microtemplates.js"></script>
+	<script src="js/event-detail.js"></script>
+</body>
+</html><strong></strong>

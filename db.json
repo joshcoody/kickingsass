@@ -1,0 +1,89 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Confirmation Bias: Innovation’s Blind Eye",
+      "description": "Great product teams understand the importance of dissenting feedback. However, a team might drive toward an inferior product because it fixates on a few pieces of positive feedback, or a persuasive product lead might seek out data to support her pet feature. Moving quickly often requires trusting our intuition, but what is the difference between gut instinct and bias?",
+      "image": "images/presenters/presenter01.jpg",
+      "hashtags": [
+        "sxsw",
+        "CapitalOneHouse"
+      ],
+      "date": "Friday, March 11",
+      "day": 11,
+      "time": "9:30 AM - 12:00 PM",
+      "location1": "Austin Convention Center",
+      "location2": "Room 9ABC",
+      "festivalType": "I",
+      "access": "Interactive Badge, Gold Badge, Platinum Badge",
+      "format": "Solo / Dual / Panel",
+      "eventType": "sessions",
+      "eventTypeDisplay": "Sessions",
+      "track": "designanddevelopment",
+      "trackDisplay": "Design and Development",
+      "level": "Advanced",
+      "slides": "http://bit.ly/1Uh1fHM",
+      "tags": [
+        "user experience",
+        "ux",
+        "user interface",
+        "design"
+      ],
+      "presenterIds": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Voter Technology: A Reimagined Future",
+      "description": "Great product teams understand the importance of dissenting feedback. However, a team might drive toward an inferior product because it fixates on a few pieces of positive feedback, or a persuasive product lead might seek out data to support her pet feature. Moving quickly often requires trusting our intuition, but what is the difference between gut instinct and bias?",
+      "hashtags": [
+        "sxsw",
+        "CapitalOneHouse"
+      ],
+      "date": "Saturday, March 12",
+      "day": 12,
+      "time": "9:30 AM - 12:00 PM",
+      "location1": "Austin Convention Center",
+      "location2": "Room 9ABC",
+      "festivalType": "M",
+      "access": "Interactive Badge, Gold Badge, Platinum Badge",
+      "format": "Solo / Dual / Panel",
+      "eventType": "screening",
+      "eventTypeDisplay": "Screening",
+      "track": "onlineharassmentsummit",
+      "trackDisplay": "Design and Development",
+      "level": "Advanced",
+      "slides": "http://bit.ly/1Uh1fHM",
+      "tags": [
+        "user experience",
+        "ux",
+        "user interface",
+        "design"
+      ],
+      "presenterIds": [
+        1,
+        2
+      ]
+    }
+  ],
+  "presenters": [
+    {
+      "id": 1,
+      "name": "Allison Abbott",
+      "title": "UX Strategist",
+      "company": "Capital One",
+      "image": "images/presenters/presenter01.jpg",
+      "description": "Katie currently leads experience strategy for a wide range of B2C and B2B clients at FCB. Her background in theatre lends a unique perspective on storytelling through experiences."
+    },
+    {
+      "id": 2,
+      "name": "Emma Sagan",
+      "title": "PRINCIPAL ASSOC/DIGITAL PROD MGMT",
+      "company": "Capital One",
+      "image": "images/presenters/presenter02.jpg",
+      "description": null
+    }
+  ]
+}

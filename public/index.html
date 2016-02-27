@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Kicking Sass</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<header class="header">
+		<div class="app-bar">
+			<div class="wrapper">
+				<nav class="app-bar__nav">
+					<ul class="app-bar__nav-list">
+						<li class="app-bar__nav-list-item">
+							<a class="app-bar__nav-link" href="#">SXSW.com</a>
+						</li>
+						<li class="app-bar__nav-list-item">
+							<a class="app-bar__nav-link" href="#">Schedule</a>
+						</li>
+						<li class="app-bar__nav-list-item">
+							<a class="app-bar__nav-link" href="#">SXsocial</a>
+						</li>
+						<li class="app-bar__nav-list-item">
+							<a class="app-bar__nav-link" href="#">Register Today</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="app-bar__schedule">
+					<ul class="app-bar__schedule-list">
+						<li class="app-bar__schedule-item">Interactive: March 11–15</li>
+						<li class="app-bar__schedule-item">Film: March 11–19</li>
+						<li class="app-bar__schedule-item">Music: March 15–20</li>
+					</ul>
+					<a class="button button--user">Sign In</a>
+				</div>
+			</div>
+		</div>
+		<div class="logo-bar">
+			<div class="wrapper">
+				<div class="logo-section">
+					<a class="logo" href="index.html">
+						<img src="images/logo.jpg" alt="SXSW">
+					</a>
+					<h1 class="page-title"><a href="index.html">Schedule</a></h1>
+				</div>
+				<form class="search">
+					<fieldset>
+						<input class="search__input" type="text" placeholder="Search our events...">
+						<input class="search__submit" type="submit">
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+		<section class="filters">
+			<div class="wrapper">
+				<div class="filter-section">
+					<div class="filter-section__label">Select conference:</div>
+					<ul class="filter-section__list">
+						<li class="filter-section__list-item">
+							<a class="filter-section__link is-active js-conference-filter" data-conference="all" href="#">All</a>
+						</li>
+						<li class="filter-section__list-item">
+							<a class="filter-section__link js-conference-filter" data-conference="I" href="#">Interactive</a>
+						</li>
+						<li class="filter-section__list-item">
+							<a class="filter-section__link js-conference-filter" data-conference="F" href="#">Film</a>
+						</li>
+						<li class="filter-section__list-item">
+							<a class="filter-section__link js-conference-filter" data-conference="M" href="#">Music</a>
+						</li>
+					</ul>
+				</div>
+				<div class="filter-section">
+					<div class="filter-section__label">Filters:</div>
+					<div class="filter-select__wrapper">
+						<label class="filter-select__label">Day</label>
+						<select class="filter-select js-select-filter" data-filter="day">
+							<option value="all">All Days</option>
+							<option value="11">Friday, March 11</option>
+							<option value="12">Saturday, March 12</option>
+							<option value="13">Sunday, March 13</option>
+							<option value="14">Monday, March 14</option>
+							<option value="15">Tuesday, March 15</option>
+							<option value="16">Wednesday, March 16</option>
+							<option value="17">Thursday, March 17</option>
+							<option value="18">Friday, March 18</option>
+							<option value="19">Saturday, March 19</option>
+							<option value="20">Sunday, March 20</option>
+						</select>
+					</div>
+					<div class="filter-select__wrapper">
+						<label class="filter-select__label">Event Type</label>
+						<select class="filter-select js-select-filter" data-filter="eventType">
+							<option value="all">All Event Types</option>
+							<option value="party">Party</option>
+							<option value="screening">Screening</option>
+							<option value="sessions">Sessions</option>
+							<option value="specialevents">Special Event</option>
+						</select>
+					</div>
+					<div class="filter-select__wrapper">
+						<label class="filter-select__label">Track</label>
+						<select class="filter-select js-select-filter" data-filter="track">
+							<option value="all">All Tracks</option>
+							<option value="artscienceandinspiration">Art, Science and Inspiration</option>
+							<option value="brandingandmarketing">Branding and Marketing</option>
+							<option value="cle">CLE</option>
+							<option value="contentanddistribution">Content and Distribution</option>
+							<option value="designanddevelopment">Design and Development</option>
+							<option value="futureofentertainment">Future of Entertainment</option>
+							<option value="governmentandpolicy">Government and Policy</option>
+							<option value="healthandmedtech">Health &amp; MedTech</option>
+							<option value="intelligentfuture">Intelligent Future</option>
+							<option value="musicstartupvillage">Music Startup Village</option>
+							<option value="musictechandformatwars">Music Tech &amp; Format Wars</option>
+							<option value="networkingmeetup">Networking Meet Up</option>
+							<option value="nextstage">Next Stage</option>
+							<option value="onlineharassmentsummit">Online Harassment Summit</option>
+							<option value="partnerprogramming">Partner Programming</option>
+							<option value="southbites">SouthBites</option>
+							<option value="startupvillage">Startup Village</option>
+							<option value="sxcreate">SX Create</option>
+							<option value="sxgood">SXgood</option>
+							<option value="sxsports">SXsports</option>
+							<option value="sxstyle">SXstyle</option>
+							<option value="sxswgaming">SXSW Gaming</option>
+							<option value="vrartrack">VR/AR Track</option>
+							<option value="workandcareer">Work and Career</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="wrapper wrapper--narrow">
+			<aside class="utilities">
+				<a class="utilities__favorites-link" href="favorites.html"><span class="icon--star"></span>My Favorites</a>
+			</aside>
+			<h2><span class="js-festival-title">All</span> Events by Speakers</h2>
+			<section class="events">
+				<div class="events__group">
+					<div class="js-events-placeholder">
+				</div>
+			</section>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="wrapper">
+			<p class="disclaimer">&copy; 2015 - 2016 SXSW, LLC SXSW&reg;, SXSWedu&reg;, SXSW Eco&reg;, and SXSW V2V&reg; and South By Southwest&reg; are trademarks owned by SXSW, LLC. Any unauthorized use of these names, or variations of these names, is a violation of state, federal, and international trademark laws.</p>
+			<nav class="footer__nav">
+				<ul class="footer__nav-list">
+					<li class="footer__nav-list-item">
+						<a class="footer__nav-link" href="#">Help</a>
+					</li>
+					<li class="footer__nav-list-item">
+						<a class="footer__nav-link" href="#">Privacy Policy</a>
+					</li>
+					<li class="footer__nav-list-item">
+						<a class="footer__nav-link" href="#">Terms of Use</a>
+					</li>
+					<li class="footer__nav-list-item">
+						<a class="footer__nav-link" href="#">Feedback</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
+
+	<script type="text/html" id="event_tmpl">
+		<div class="event" id="<%=id%>">
+			<div class="event__column">
+				<a class="event__favorite-trigger icon--star js-favorite-trigger <%=favoritesTriggerClass%>" href="#"><span>Favorite</span></a>
+				<a class="event__name" href="event-detail.html?eventid=<%=id%>"><%=title%></a>
+				<ul class="event__festival-types">
+					<li class="event__festival-type event__festival-type--<%=festivalType%>"><%=festivalType%></li>
+				</ul>
+			</div>
+			<div class="event__column">
+				<ul class="event__types">
+					<li class="event__types--type"><%=eventTypeDisplay%></li>
+					<li class="event__types--format"><a href="#"><%=format%></a></li>
+					<li class="event__types--category"><%=trackDisplay%></li>
+				</ul>
+			</div>
+			<div class="event__column">
+				<ul class="event__location">
+					<li><a href="#"><%=location1%></a></li>
+					<li><strong><%=location2%></strong></li>
+				</ul>
+			</div>
+			<div class="event__column">
+				<div class="event__date"><%=date%></div>
+				<div class="event__time"><%=time%></div>
+			</div>
+		</div>
+	</script>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/microtemplates.js"></script>
+	<script src="js/event-list.js"></script>
+</body>
+</html>

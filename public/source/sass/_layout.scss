@@ -1,0 +1,36 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	background: $color-gray-lighter;
+	color: $color-gray-dark;
+	@include display-flex;
+	@include flex-direction(column);
+	min-height: 100vh;
+
+	&.page--event-detail {
+		background: $color-white;
+	}
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 75.125rem;
+	padding: 0 1rem;
+
+	&--narrow {
+		max-width: 70.125rem;
+	}
+
+}
+
+.main {
+	flex: 1;
+}

@@ -6,6 +6,6 @@ For years, front-end developers have turned to preprocessors like Sass and Coffe
 * **master:** Start with this branch. CSS is written in Sass, and JavaScript uses jQuery with no script loader or ES6.
 * **step-one:** Sass removed, and PostCSS added.
 * **step-two:** jQuery removed, and System.js added.
-* **step-three:** JSPM added and configured to work with System.js.
+* **step-three:** Final branch. JSPM added and configured to work with System.js.
 
 If you lose your place during the workshop, check out the corresponding branch to see the completed code.

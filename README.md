@@ -1,2 +1,1 @@
-# Kicking Sass:  
-How to Write CSS in a PostCSS World
+# Kicking Sass: How to Write CSS in a PostCSS World

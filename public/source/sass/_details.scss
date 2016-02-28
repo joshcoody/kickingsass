@@ -5,15 +5,27 @@
 		margin-bottom: 2rem;
 	}
 
-	dl {
-		@include display-flex;
-		@include flex-wrap(wrap);
+	dt {
+		font-weight: 700;
 	}
 
-	dt {
-		@include flex(0 0 6.625rem);
-		font-weight: 700;
-		text-align: right;
+}
+
+@media screen and (min-width: 48rem) {
+
+	.details {
+
+		dl {
+			@include display-flex;
+			@include flex-wrap(wrap);
+		}
+
+		dt {
+			@include flex(0 0 6.625rem);
+			font-weight: 700;
+			text-align: right;
+		}
+
 	}
 
 }

@@ -17,8 +17,6 @@
 
 	}
 
-	
-
 	&__article {
 		@include flex(1);
 	}
@@ -105,8 +103,8 @@
 	}
 
 	&__sidebar {
-		@include flex(0 0 17rem);
-		margin-left: 2.625rem;
+		margin-bottom: 1rem;
+		width: 100%;
 
 		> * {
 			display: block;
@@ -116,6 +114,20 @@
 
 		> * + * {
 			margin-top: 1.125rem;
+		}
+
+	}
+
+}
+
+@media screen and (min-width: 48rem) {
+
+	.event-detail {
+
+		&__sidebar {
+			@include flex(0 0 17rem);
+			margin-left: 2.625rem;
+			width: auto;
 		}
 
 	}

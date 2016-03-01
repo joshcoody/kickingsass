@@ -11,6 +11,5 @@ For years, front-end developers have turned to preprocessors like Sass and Coffe
 If you lose your place during the workshop, check out the corresponding branch to see the completed code.
 
 ## Software Requirements
-
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/en/)

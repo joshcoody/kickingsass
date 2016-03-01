@@ -104,17 +104,21 @@
 						</ul>
 					</div>
 				</div>
-				<img src="images/events/event01.jpg" alt="Checkbox That Ruined My Life">
+				<% if (image !== null) { %>
+					<img src="<%=image%>" alt="<%=title%>">
+				<% } %>
 				<div class="event-detail__article-description">
 					<p><%=description%></p>
 				</div>
 				<p class="event-detail__tags"><strong>Hashtags:</strong> <% for (var i = 0; i < hashtags.length; i++) { %>
 					#<%=hashtags[i]%> 
 				<% } %></p>
-				<div class="presenters">
-					<h2 class="section__heading">Presenters</h2>
-					<div class="js-presenters-placeholder"></div>
-				</div>
+				<% if (presenterIds.length > 0) { %>
+					<div class="presenters">
+						<h2 class="section__heading">Presenters</h2>
+						<div class="js-presenters-placeholder"></div>
+					</div>
+				<% } %>
 				<div class="details">
 					<h2 class="section__heading">Details</h2>
 					<dl>
@@ -144,8 +148,10 @@
 					<dl>
 						<dt>Tags</dt>
 						<dd>
-							<% for (var i = 0; i < tags.length; i++) { %> 
-								<%=tags[i]%> 
+							<% if (tags !== null) { %> 
+								<% for (var i = 0; i < tags.length; i++) { %> 
+									<%=tags[i]%> 
+								<% } %>
 							<% } %>
 						</dd>
 					</dl>

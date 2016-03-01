@@ -30,7 +30,9 @@ $(document).ready(function() {
 	function renderEvent(data) {
 		document.title = data.title + ' | SXSW';
 		resultsPlaceholder.html(tmpl('event_detail_tmpl', data));
-		renderPresenters(data.presenterIds);
+		if (data.presenterIds.length > 0) {
+			renderPresenters(data.presenterIds);
+		}
 	};
 
 	function renderPresenters(presenterIds) {
@@ -41,7 +43,7 @@ $(document).ready(function() {
 			for (var i = 0; i < presenterIds.length; i++) {
 				for (var j = 0; j < presenters.length; j++) {
 					if (presenters[j].id === presenterIds[i]) {
-						output += tmpl('presenter_tmpl', presenters[i]);
+						output += tmpl('presenter_tmpl', presenters[j]);
 					}
 				}
 			}

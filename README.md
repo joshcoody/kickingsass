@@ -5,10 +5,10 @@ For years, front-end developers have turned to preprocessors like Sass and Coffe
 ## Understanding the Git branches
 Throughout the course of the workshop, we'll take a project built with Sass and jQuery and rebuild it using PostCSS, System.js and JSPM. The workshop will be broken up into several different stages, each of which corresponds with a Git branch:
 
-* **step-one:** Start with this branch. CSS is written in Sass, and JavaScript uses jQuery with no script loader or ES6.
-* **[step-two](https://github.com/degdigital/kickingsass):** Sass removed, and PostCSS added.
-* **step-three:** jQuery removed, and System.js added.
-* **step-four:** Final branch. JSPM added and configured to work with System.js.
+* **[step-one](https://github.com/degdigital/kickingsass):** Start with this branch. CSS is written in Sass, and JavaScript uses jQuery with no script loader or ES6.
+* **[step-two](https://github.com/degdigital/kickingsass/tree/step-two):** Sass removed, and PostCSS added.
+* **[step-three](https://github.com/degdigital/kickingsass/tree/step-three):** jQuery removed, and System.js added.
+* **[step-four](https://github.com/degdigital/kickingsass/tree/step-four):** Final branch. JSPM added and configured to work with System.js.
 
 If at any time you lose your place, just check out the corresponding branch to catch back up with the completed code.
 

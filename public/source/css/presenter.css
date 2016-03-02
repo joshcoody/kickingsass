@@ -1,5 +1,5 @@
 .presenter {
-	border-bottom: 0.125rem solid $color-gray-lighter;
+	border-bottom: 0.125rem solid var(--color-gray-lighter);
 	overflow: hidden;
 	padding: 2rem 0;
 
@@ -14,7 +14,7 @@
 	}
 
 	&__name {
-		font-family: $font-family-primary;
+		font-family: var(--font-family-primary);
 		font-size: 1.125rem;
 		font-weight: 700;
 		margin: 0;
@@ -22,14 +22,14 @@
 
 	&__title,
 	&__location {
-		color: $color-gray;
+		color: var(--color-gray);
 		font-size: 0.8125rem;
 		font-weight: 700;
 		margin: 0;
 	}
 
 	&__description {
-		color: $color-gray;
+		color: var(--color-gray);
 		font-size: 0.8125rem;
 	}
 

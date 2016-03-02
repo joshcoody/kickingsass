@@ -1,32 +1,29 @@
 .app-bar {
-	background-color: $color-gray-darker;
+	background-color: var(--color-gray-darker);
 	padding: 1rem 0;
 
 	.wrapper {
-		@include display-flex;
-		@include justify-content(space-between);
+		display: flex;
+		justify-content: space-between;
 	}
 
 	&__nav {
-		@include align-self(center);
+		align-self: center;
 	}
 
 	&__nav-list {
-		list-style: none;
-		margin: 0;
+		@mixin list-bare;
 		overflow: hidden;
-		padding: 0;
 	}
 
 	&__nav-link {
-		color: $color-offwhite;
+		color: var(--color-offwhite);
 		display: block;
 		padding: 0;
-		@include transition-property(color);
-		@include transition-duration(0.5s);
+		@mixin transition color;
 
 		&:hover {
-			color: $color-teal;
+			color: var(--color-teal);
 		}
 	}
 
@@ -52,16 +49,16 @@
 		text-transform: uppercase;
 
 		&:nth-child(1) {
-			color: $color-orange;
+			color: var(--color-orange);
 		}
 
 		&:nth-child(2) {
-			color: $color-blue;
+			color: var(--color-blue);
 
 		}
 
 		&:nth-child(3) {
-			color: $color-green;
+			color: var(--color-green);
 
 		}
 
@@ -69,7 +66,7 @@
 
 }
 
-@media screen and (min-width: 48rem) {
+@media screen and (--medium) {
 
 	.app-bar {
 

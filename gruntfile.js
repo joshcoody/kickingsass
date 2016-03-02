@@ -10,30 +10,60 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		compass: {
+		sass_globbing: {
+			dist: {
+				files: {
+					"public/source/css/main.css": [
+						"public/source/css/**/*.css",
+						"!public/source/css/main.css"
+					]
+				}
+			}
+		},
+		postcss: {
 			dist: {
 				options: {
-					sassDir: 'public/source/sass/',
-					cssDir: 'public/css',
-					outputStyle: 'compressed',
-					require: [
-						'compass-normalize'
-					]
-    			}
-			}
+	            	map: false,
+		            processors: [
+		                require("postcss-import")(),
+		                require("postcss-mixins")(),
+		                require("postcss-custom-properties")(),
+		                require("postcss-custom-media")(),
+		                require("postcss-color-function")(),
+		                require("postcss-nested")(),
+		                require("postcss-calc")(),
+		                require("autoprefixer")({
+		                    browsers: 'last 2 versions'
+		                }),
+		                require('csswring')
+		            ]
+		        },
+		        files: [
+		            {
+		                expand: false,
+		                src: ["public/source/css/main.css"],
+		                dest: "public/css/main.css",
+		                ext: '.css'
+		            }
+		        ]
+		    }
 		},
 		watch: {
 			css: {
-				files: 'public/source/sass/**/*.scss',
-				tasks: ['compass']
-			},
-			options: {
-				"spawn": true
-			}
+		        files: [
+		        	"public/source/css/**/*.css",
+		        	"!public/source/css/main.css"
+		        ],
+		        tasks: ["sass_globbing","postcss"],
+		        options: {
+		            "spawn": true
+		        }
+		    }
 		}
 	});
 	grunt.loadNpmTasks('grunt-json-server');
-	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-sass-globbing');
+	grunt.loadNpmTasks('grunt-postcss');
 	grunt.registerTask('default',['watch']);
 };

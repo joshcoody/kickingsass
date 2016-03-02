@@ -2,23 +2,23 @@
 	display: none;
 }
 
-@media screen and (min-width: 48rem) {
+@media screen and (--medium) {
 
 	.search {
-		border-bottom: 0.25rem solid $color-gray-light;
+		border-bottom: 0.25rem solid var(--color-gray-light);
 		padding: 0;
 		position: relative;
 		width: 24rem;
 
 		&:before {
-			color: $color-gray;
+			color: var(--color-gray);
 			content: "\e901";
 			display: block;
-			font-family: $font-family-icons;
+			font-family: var(--font-family-icons);
 			position: absolute;
 			right: 0.25rem;
 			top: 50%;
-			@include transform(translate(0, -50%));
+			transform: translate(0, -50%);
 		}
 
 		fieldset {
@@ -37,7 +37,7 @@
 		}
 
 		&__input::-webkit-input-placeholder {
-			font-family: $font-family-secondary;
+			font-family: var(--font-family-secondary);
 			font-size: 1.125rem;
 			font-style: italic;
 			font-weight: 400;

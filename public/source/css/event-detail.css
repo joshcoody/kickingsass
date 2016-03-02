@@ -1,6 +1,6 @@
 .event-detail {
-	@include display-flex;
-	@include flex-wrap(wrap);
+	display: flex;
+	flex-wrap: wrap;
 	max-width: 62.125rem;
 
 	&__header {
@@ -18,25 +18,25 @@
 	}
 
 	&__article {
-		@include flex(1);
+		flex: 1;
 	}
 
 	&__meta-wrapper {
-		@include align-items(center);
-		background-color: $color-gray-lighter;
-		@include display-flex;
+		align-items: center;
+		background-color: var(--color-gray-lighter);
+		display: flex;
 		margin-bottom: 1.625rem;
 		padding: 1.125rem 0;
 		text-align: center;
 	}
 
 	&__meta-column {
-		@include flex(1);
+		flex: 1;
 		padding: 1.125rem 0;
 		position: relative;
 
 		&:after {
-			background-color: $color-gray-light;
+			background-color: var(--color-gray-light);
 			content: "";
 			display: block;
 			height: 100%;
@@ -57,9 +57,7 @@
 	}
 
 	&__meta-social {
-		list-style: none;
-		margin: 0;
-		padding: 0;
+		@mixin list-bare;
 
 		li {
 			display: inline-block;
@@ -70,7 +68,7 @@
 
 	&__social {
 		border-radius: 50%;
-		color: $color-white;
+		color: var(--color-white);
 		display: block;
 		height: 2.25rem;
 		position: relative;
@@ -85,7 +83,7 @@
 			left: 50%;
 			position: absolute;
 			top: 50%;
-			@include transform(translate(-50%, -50%));
+			transform: translate(-50%, -50%);
 		}
 
 		&--twitter {
@@ -120,12 +118,12 @@
 
 }
 
-@media screen and (min-width: 48rem) {
+@media screen and (--medium) {
 
 	.event-detail {
 
 		&__sidebar {
-			@include flex(0 0 17rem);
+			flex: 0 0 17rem;
 			margin-left: 2.625rem;
 			width: auto;
 		}

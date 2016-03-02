@@ -11,17 +11,17 @@
 
 }
 
-@media screen and (min-width: 48rem) {
+@media screen and (--medium) {
 
 	.details {
 
 		dl {
-			@include display-flex;
-			@include flex-wrap(wrap);
+			display: flex;
+			flex-wrap: wrap;
 		}
 
 		dt {
-			@include flex(0 0 6.625rem);
+			flex: 0 0 6.625rem;
 			font-weight: 700;
 			text-align: right;
 		}

@@ -2,8 +2,8 @@
 	margin-bottom: 6rem;
 
 	&__group-header {
-		background-color: $color-gray-light;
-		color: $color-gray-darker;
+		background-color: var(--color-gray-light);
+		color: var(--color-gray-darker);
 		font-weight: 700;
 		padding: 0.75rem;
 		text-align: center;
@@ -12,8 +12,8 @@
 }
 
 .event {
-	background-color: $color-offwhite;
-	border-bottom: 0.25rem solid $color-gray-lighter;
+	background-color: var(--color-offwhite);
+	border-bottom: 0.25rem solid var(--color-gray-lighter);
 
 	&:last-child {
 		border-bottom: 0;
@@ -27,7 +27,7 @@
 		width: calc(100% / 6);
 
 		&:after {
-			background-color: $color-gray-lighter;
+			background-color: var(--color-gray-lighter);
 			content: "";
 			display: block;
 			height: calc(100% - 2.25rem);
@@ -61,24 +61,23 @@
 	}
 
 	&__favorite-trigger {
-		color: $color-gray-light;
+		color: var(--color-gray-light);
 		font-size: 2rem;
 		left: 1.5rem;
 		position: absolute;
 		top: 50%;
-		@include transform(translate(0, -50%));
-		@include transition-property(color);
-		@include transition-duration(0.5s);
+		transform: translate(0, -50%);
+		@mixin transition color;
 
 		&:hover {
-			color: $color-gray;
+			color: var(--color-gray);
 		}
 
 		&.is-active {
-			color: $color-gold;
+			color: var(--color-gold);
 
 			&:hover {
-				color: $color-gold;
+				color: var(--color-gold);
 			}
 
 		}
@@ -91,7 +90,7 @@
 
 	&__name {
 		display: block;
-		font-family: $font-family-secondary;
+		font-family: var(--font-family-secondary);
 		font-size: 1.125rem;
 		font-weight: 700;
 		margin-bottom: 0.25rem;
@@ -110,7 +109,7 @@
 
 	&__festival-type {
 		border-radius: 50%;
-		color: $color-white;
+		color: var(--color-white);
 		display: block;
 		font-size: 0.625rem;
 		height: 0.8125rem;
@@ -119,15 +118,15 @@
 		width: 0.875rem;
 		
 		&--I {
-			background-color: $color-orange;
+			background-color: var(--color-orange);
 		}
 
 		&--M {
-			background-color: $color-green;
+			background-color: var(--color-green);
 		}
 
 		&--F {
-			background-color: $color-blue;			
+			background-color: var(--color-blue);			
 		}
 
 	}
@@ -146,10 +145,10 @@
 
 }
 
-@media screen and (min-width: 48rem) {
+@media screen and (--medium) {
 
 	.event {
-		@include display-flex;
+		display: flex;
 	}
 
 }

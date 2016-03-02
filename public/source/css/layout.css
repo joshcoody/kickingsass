@@ -9,14 +9,14 @@ html {
 }
 
 body {
-	background: $color-gray-lighter;
-	color: $color-gray-dark;
-	@include display-flex;
-	@include flex-direction(column);
+	background: var(--color-gray-lighter);
+	color: var(--color-gray-dark);
+	display: flex;
+	flex-direction: column;
 	min-height: 100vh;
 
 	&.page--event-detail {
-		background: $color-white;
+		background: var(--color-white);
 	}
 }
 

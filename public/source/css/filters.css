@@ -1,5 +1,13 @@
+:root {
+	--color-filters: var(--color-orange);
+	/* --color-filters: var(--color-green); */
+	--color-filters-dark: color(var(--color-filters) shade(25%));
+	--color-filters-darker: color(var(--color-filters) shade(50%));
+	--color-filters-light: color(var(--color-filters) tint(80%));
+}
+
 .filters {
-	background-color: $color-orange;
+	background-color: var(--color-filters);
 	margin-bottom: 4.25rem;
 	padding: 2.25rem 0;
 	position: relative;
@@ -8,14 +16,14 @@
 	&:before {
 		border-left: 1rem solid transparent;
 		border-right: 1rem solid transparent;
-		border-top: 1rem solid $color-orange;
+		border-top: 1rem solid var(--color-filters);
 		bottom: -1rem;
 		content: "";
 		display: block;
 		height: 0; 
 		left: 50%;
 		position: absolute;
-		@include transform(translate(-50%, 0));
+		transform: translate(-50%, 0);
 		width: 0; 
 	}
 
@@ -34,16 +42,14 @@
 	}
 
 	&__label {
-		color: $color-orange-darker;
-		font-family: $font-family-secondary;
+		color: var(--color-filters-darker);
+		font-family: var(--font-family-secondary);
 		font-weight: 700;
 		margin-bottom: 0.5rem;
 	}
 
 	&__list {
-		list-style: none;
-		margin: 0;
-		padding: 0;
+		@mixin list-bare;
 	}
 
 	&__list-item {
@@ -52,23 +58,22 @@
 	}
 
 	&__link {
-		color: $color-orange-light;
+		color: var(--color-filters-light);
 		padding: 0;
-		@include transition-property(color);
-		@include transition-duration(0.5s);
+		@mixin transition color;
 
 		&:hover {
-			color: $color-white;
+			color: var(--color-white);
 		}
 
 		&.is-active {
-			color: $color-white;
+			color: var(--color-white);
 			display: inline-block;
 			font-weight: 700;
 			position: relative;
 
 			&:before {
-				background-color: $color-white;
+				background-color: var(--color-white);
 				bottom: -0.25rem;
 				content: "";
 				display: block;
@@ -84,10 +89,10 @@
 
 .filter-select {
 	-webkit-appearance: none;
-	background: $color-orange-dark url(../images/arrow_down.png) right 1rem center no-repeat;
+	background: var(--color-filters-dark) url(../images/arrow_down.png) right 1rem center no-repeat;
 	border: 0;
 	border-radius: 0;
-	color: $color-white;
+	color: var(--color-white);
 	cursor: pointer;
 	height: 2.75rem;
 	min-width: 14.5rem;
@@ -102,7 +107,7 @@
 	}
 
 	&__label {
-		color: $color-orange-darker;
+		color: var(--color-filters-darker);
 		display: block;
 		font-size: 0.8125rem;
 		font-weight: 700;
@@ -112,7 +117,7 @@
 
 }
 
-@media screen and (min-width: 48rem) {
+@media screen and (--medium) {
 
 	.filter-section {
 

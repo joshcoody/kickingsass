@@ -1,29 +1,29 @@
 @import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,700|Bitter:400,400italic,700);
 
 body {
-	font-family: $font-family-primary;
+	font-family: var(--font-family-primary);
 	line-height: 1.2;
 }
 
 a {
-	color: $color-teal;
+	color: var(--color-teal);
 	text-decoration: none;
 }
 
 h1,
 h2 {
-	font-family: $font-family-secondary;
+	font-family: var(--font-family-secondary);
 	font-weight: 400;
 }
 
 h1 {
-	color: $color-gray;
+	color: var(--color-gray);
 	font-size: 3.125rem;
 	font-style: italic;
 }
 
 h2 {
-	color: $color-gray-dark;
+	color: var(--color-gray-dark);
 	font-size: 1.875rem;
 }
 
@@ -32,8 +32,8 @@ p {
 }
 
 .section__heading {
-	background: $color-gray-lighter;
-	color: $color-gray-dark;
+	background: var(--color-gray-lighter);
+	color: var(--color-gray-dark);
 	font-size: 1.125rem;
 	font-weight: 700;
 	margin: 0;

@@ -15,6 +15,11 @@ If at any time you lose your place, just check out the corresponding branch to c
 ## Software Requirements
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/en/)
-* Text editor
-* Terminal
+
+All other dependencies are defined in the package.json file and will be installed during the workshop.
+
+Also, make sure you have:
+* A web browser (preferably Chrome)
+* A text editor
+* A terminal
 * Admin rights to your computer

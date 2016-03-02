@@ -24,6 +24,7 @@
 		padding: 1.5rem;
 		position: relative;
 		text-align: center;
+		width: calc(100% / 6);
 
 		&:after {
 			background-color: $color-gray-lighter;
@@ -39,8 +40,8 @@
 
 		&:first-child {
 			padding-left: 4.5rem;
-			@include flex(3);
 			text-align: left;
+			width: 50%;
 		}
 
 		&:last-child {

@@ -8,7 +8,7 @@ Delete files:
      Gemfile.lock
      /source/scss/main.css
 Empty files:
-     css/main.css
+     /public/css/main.css
 Add files:
      Manually add a 00reset.css file to /source/css (https://necolas.github.io/normalize.css/3.0.3/normalize.css)
      Manually add an 02mixins.css file

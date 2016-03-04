@@ -1,9 +1,47 @@
-System.register('eventsList.js', [], function (_export) {
+System.register('domUtils.js', [], function (_export) {
+    'use strict';
+
+    var domUtils;
+    return {
+        setters: [],
+        execute: function () {
+            domUtils = {
+
+                emptyElement: function emptyElement(parentEl) {
+                    while (parentEl.firstChild) {
+                        parentEl.removeChild(parentEl.firstChild);
+                    }
+                },
+
+                isDescendentByClass: function isDescendentByClass(parentClass, el) {
+                    if (el.classList.contains(parentClass)) {
+                        return el;
+                    }
+                    var node = el.parentNode;
+                    while (node != null) {
+                        if (typeof node.classList !== 'undefined' && node.classList.contains(parentClass)) {
+                            return node;
+                        }
+                        node = node.parentNode;
+                    }
+                    return false;
+                }
+
+            };
+
+            _export('default', domUtils);
+        }
+    };
+});
+
+System.register('eventsList.js', ['domUtils.js'], function (_export) {
 	'use strict';
 
-	var eventsList;
+	var domUtils, eventsList;
 	return {
-		setters: [],
+		setters: [function (_domUtilsJs) {
+			domUtils = _domUtilsJs['default'];
+		}],
 		execute: function () {
 			eventsList = function eventsList() {
 
@@ -28,7 +66,7 @@ System.register('eventsList.js', [], function (_export) {
 				function bindEvents() {
 					document.addEventListener('click', function (e) {
 						var clickedEl = e.target;
-						if (isDescendentByClass('js-favorite-trigger', e.target) !== false) {
+						if (domUtils.isDescendentByClass('js-favorite-trigger', e.target) !== false) {
 							e.preventDefault();
 							toggleFavorite(clickedEl);
 						}
@@ -85,7 +123,7 @@ System.register('eventsList.js', [], function (_export) {
 						event['favoritesTriggerClass'] = savedFavorites.indexOf(events[i].id.toString()) !== -1 ? 'is-active' : '';
 						output += '<div class="event" id="' + event.id + '">\n\t\t\t\t<div class="event__column">\n\t\t\t\t\t<a class="event__favorite-trigger icon--star js-favorite-trigger ' + event.favoritesTriggerClass + '" href="#"><span>Favorite</span></a>\n\t\t\t\t\t<a class="event__name" href="event-detail.html?eventid=' + event.id + '">' + event.title + '</a>\n\t\t\t\t\t<ul class="event__festival-types">\n\t\t\t\t\t\t<li class="event__festival-type event__festival-type--' + event.festivalType + '">' + event.festivalType + '</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t\t<div class="event__column">\n\t\t\t\t\t<ul class="event__types">\n\t\t\t\t\t\t' + (event.eventTypeDisplay ? '<li class="event__types--type">' + event.eventTypeDisplay + '</li>' : '') + '\n\t\t\t\t\t\t' + (event.format ? '<li class="event__types--format"><a href="#">' + event.format + '</a></li>' : '') + '\n\t\t\t\t\t\t' + (event.trackDisplay ? '<li class="event__types--category">' + event.trackDisplay + '</li>' : '') + '\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t\t<div class="event__column">\n\t\t\t\t\t<ul class="event__location">\n\t\t\t\t\t\t<li><a href="#">' + event.location1 + '</a></li>\n\t\t\t\t\t\t<li><strong>' + event.location2 + '</strong></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t\t<div class="event__column">\n\t\t\t\t\t<div class="event__date">' + event.date + '</div>\n\t\t\t\t\t<div class="event__time">' + event.time + '</div>\n\t\t\t\t</div>\n\t\t\t</div>';
 					});
-					emptyElement(resultsPlaceholder);
+					domUtils.emptyElement(resultsPlaceholder);
 					resultsPlaceholder.insertAdjacentHTML('afterbegin', output);
 				};
 
@@ -102,7 +140,7 @@ System.register('eventsList.js', [], function (_export) {
 				};
 
 				function renderError(msg) {
-					emptyElement(resultsPlaceholder);
+					domUtils.emptyElement(resultsPlaceholder);
 					resultsPlaceholder.insertAdjacentHTML('afterbegin', '<p>' + msg + '</p>');
 				};
 
@@ -131,26 +169,6 @@ System.register('eventsList.js', [], function (_export) {
 						}
 					}
 					localStorage.setItem('kickingsass_favorites', JSON.stringify(savedFavorites));
-				};
-
-				function emptyElement(parentEl) {
-					while (parentEl.firstChild) {
-						parentEl.removeChild(parentEl.firstChild);
-					}
-				};
-
-				function isDescendentByClass(parentClass, el) {
-					if (el.classList.contains(parentClass)) {
-						return el;
-					}
-					var node = el.parentNode;
-					while (node != null) {
-						if (typeof node.classList !== 'undefined' && node.classList.contains(parentClass)) {
-							return node;
-						}
-						node = node.parentNode;
-					}
-					return false;
 				};
 
 				init();

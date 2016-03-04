@@ -1,3 +1,6 @@
+import urlUtils from "urlUtils";
+import domUtils from "domUtils";
+
 let eventDetail = function() {
 
 	let eventsUrl = 'http://localhost:5555/events/',
@@ -5,7 +8,7 @@ let eventDetail = function() {
 		noEventIdMsg = 'No event ID given in the URL.',
 		ajaxErrorMsg = 'There was an error retrieving event info. Please try again.',
 		resultsPlaceholder = document.querySelector('.js-event-detail-placeholder'),
-		eventId = getParameterByName('eventid', window.location);
+		eventId = urlUtils.getParameterByName('eventid', window.location);
 
 	function init() {
 		if ((eventId === null) || (eventId === '')) {
@@ -15,9 +18,7 @@ let eventDetail = function() {
 		}
 	};
 
-	function getAjaxData(url, callback, id) {
-		id = typeof id !== 'undefined' ? id : '';
-		
+	function getAjaxData(url, callback, id = '') {
 		let request = new XMLHttpRequest();
 		request.open('GET', url + id, true);
 
@@ -43,7 +44,7 @@ let eventDetail = function() {
 
 	function renderEvent(data) {
 		window.title = data.title + ' | SXSW';
-		emptyElement(resultsPlaceholder);
+		domUtils.emptyElement(resultsPlaceholder);
 		let output = `<section class="event-detail">
 			<header class="event-detail__header">
 				<h2>${data.title}</h2>
@@ -162,27 +163,11 @@ let eventDetail = function() {
 			output = tags.join(' ');
 		}
 		return output;
-	}
-
-	function renderError(msg) {
-		emptyElement(resultsPlaceholder);
-		resultsPlaceholder.insertAdjacentHTML('afterbegin', `<p>${msg}</p>`);
 	};
 
-	function emptyElement(parentEl) {
-        while (parentEl.firstChild) {
-            parentEl.removeChild(parentEl.firstChild);
-        }
-    };
-
-	function getParameterByName(name, url) {
-	    if (!url) url = window.location.href;
-	    name = name.replace(/[\[\]]/g, "\\$&");
-	    let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-	        results = regex.exec(url);
-	    if (!results) return null;
-	    if (!results[2]) return '';
-	    return decodeURIComponent(results[2].replace(/\+/g, " "));
+	function renderError(msg) {
+		domUtils.emptyElement(resultsPlaceholder);
+		resultsPlaceholder.insertAdjacentHTML('afterbegin', `<p>${msg}</p>`);
 	};
 
 	init();

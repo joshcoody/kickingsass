@@ -1,9 +1,47 @@
-System.register('favoritesList.js', [], function (_export) {
+System.register('domUtils.js', [], function (_export) {
+    'use strict';
+
+    var domUtils;
+    return {
+        setters: [],
+        execute: function () {
+            domUtils = {
+
+                emptyElement: function emptyElement(parentEl) {
+                    while (parentEl.firstChild) {
+                        parentEl.removeChild(parentEl.firstChild);
+                    }
+                },
+
+                isDescendentByClass: function isDescendentByClass(parentClass, el) {
+                    if (el.classList.contains(parentClass)) {
+                        return el;
+                    }
+                    var node = el.parentNode;
+                    while (node != null) {
+                        if (typeof node.classList !== 'undefined' && node.classList.contains(parentClass)) {
+                            return node;
+                        }
+                        node = node.parentNode;
+                    }
+                    return false;
+                }
+
+            };
+
+            _export('default', domUtils);
+        }
+    };
+});
+
+System.register('favoritesList.js', ['domUtils.js'], function (_export) {
 	'use strict';
 
-	var favoritesList;
+	var domUtils, favoritesList;
 	return {
-		setters: [],
+		setters: [function (_domUtilsJs) {
+			domUtils = _domUtilsJs['default'];
+		}],
 		execute: function () {
 			favoritesList = function favoritesList() {
 
@@ -52,12 +90,12 @@ System.register('favoritesList.js', [], function (_export) {
 							output += '<div class="event" id="' + event.id + '">\n\t\t\t\t\t<div class="event__column">\n\t\t\t\t\t\t<div class="event__favorite-trigger icon--star is-active"><span>Favorite</span></div>\n\t\t\t\t\t\t<a class="event__name" href="event-detail.html?eventid=' + event.id + '">' + event.title + '</a>\n\t\t\t\t\t\t<ul class="event__festival-types">\n\t\t\t\t\t\t\t<li class="event__festival-type event__festival-type--' + event.festivalType + '">' + event.festivalType + '</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="event__column">\n\t\t\t\t\t\t<ul class="event__types">\n\t\t\t\t\t\t\t<li class="event__types--type">' + event.eventTypeDisplay + '</li>\n\t\t\t\t\t\t\t<li class="event__types--format"><a href="#">' + event.format + '</a></li>\n\t\t\t\t\t\t\t<li class="event__types--category">' + event.trackDisplay + '</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="event__column">\n\t\t\t\t\t\t<ul class="event__location">\n\t\t\t\t\t\t\t<li><a href="#">' + event.location1 + '</a></li>\n\t\t\t\t\t\t\t<li><strong>' + event.location2 + '</strong></li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="event__column">\n\t\t\t\t\t\t<div class="event__date">' + event.date + '</div>\n\t\t\t\t\t\t<div class="event__time">' + event.time + '</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>';
 						}
 					});
-					emptyElement(resultsPlaceholder);
+					domUtils.emptyElement(resultsPlaceholder);
 					resultsPlaceholder.insertAdjacentHTML('afterbegin', output);
 				};
 
 				function renderError(msg) {
-					emptyElement(resultsPlaceholder);
+					domUtils.emptyElement(resultsPlaceholder);
 					resultsPlaceholder.insertAdjacentHTML('afterbegin', '<p>' + msg + '</p>');
 				};
 
@@ -68,12 +106,6 @@ System.register('favoritesList.js', [], function (_export) {
 						output = JSON.parse(faves);
 					}
 					return output;
-				};
-
-				function emptyElement(parentEl) {
-					while (parentEl.firstChild) {
-						parentEl.removeChild(parentEl.firstChild);
-					}
 				};
 
 				init();

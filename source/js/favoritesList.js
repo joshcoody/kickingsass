@@ -1,3 +1,5 @@
+import domUtils from "domUtils";
+
 let favoritesList = function() {
 
 	let eventsUrl = 'http://localhost:5555/events/',
@@ -70,12 +72,12 @@ let favoritesList = function() {
 				</div>`;
 			}
 		});
-		emptyElement(resultsPlaceholder);
+		domUtils.emptyElement(resultsPlaceholder);
 		resultsPlaceholder.insertAdjacentHTML('afterbegin', output);
 	};
 
 	function renderError(msg) {
-		emptyElement(resultsPlaceholder);
+		domUtils.emptyElement(resultsPlaceholder);
 		resultsPlaceholder.insertAdjacentHTML('afterbegin', `<p>${msg}</p>`);
 	};
 
@@ -86,13 +88,7 @@ let favoritesList = function() {
 			output = JSON.parse(faves);
 		}
 		return output;
-	};	
-
-	function emptyElement(parentEl) {
-        while (parentEl.firstChild) {
-            parentEl.removeChild(parentEl.firstChild);
-        }
-    };
+	};
 
 	init();
 

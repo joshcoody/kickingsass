@@ -1,3 +1,5 @@
+import domUtils from "domUtils";
+
 let eventsList = function() {
 
 	let eventsUrl = 'http://localhost:5555/events/',
@@ -21,7 +23,7 @@ let eventsList = function() {
 	function bindEvents() {
 		document.addEventListener('click', function(e) {
 			let clickedEl = e.target;
-			if (isDescendentByClass('js-favorite-trigger', e.target) !== false) {
+			if (domUtils.isDescendentByClass('js-favorite-trigger', e.target) !== false) {
 				e.preventDefault();
 				toggleFavorite(clickedEl);
 			}
@@ -103,7 +105,7 @@ let eventsList = function() {
 				</div>
 			</div>`
 		});
-		emptyElement(resultsPlaceholder);
+		domUtils.emptyElement(resultsPlaceholder);
 		resultsPlaceholder.insertAdjacentHTML('afterbegin', output);
 	};
 
@@ -120,7 +122,7 @@ let eventsList = function() {
 	};
 
 	function renderError(msg) {
-		emptyElement(resultsPlaceholder);
+		domUtils.emptyElement(resultsPlaceholder);
 		resultsPlaceholder.insertAdjacentHTML('afterbegin', `<p>${msg}</p>`);
 	};
 
@@ -150,26 +152,6 @@ let eventsList = function() {
 		}
 		localStorage.setItem('kickingsass_favorites', JSON.stringify(savedFavorites));
 	};
-
-	function emptyElement(parentEl) {
-        while (parentEl.firstChild) {
-            parentEl.removeChild(parentEl.firstChild);
-        }
-    };
-
-	function isDescendentByClass(parentClass, el) {
-        if (el.classList.contains(parentClass)) {
-            return el;
-        }
-        let node = el.parentNode;
-        while (node != null) {
-            if ((typeof node.classList !== 'undefined') && (node.classList.contains(parentClass))) {
-                return node;
-            }
-            node = node.parentNode;
-        }
-        return false;
-    };
 
     init();
 

@@ -1,27 +1,39 @@
 {
-	"name": "kicking_sass",
-	"version": "2.0.0",
-	"repository": "https://github.com/degdigital/kickingsass",
-	"license": "MIT",
-	"engines": {
-		"node": ">=4.2.0"
-	},
-	"devDependencies": {
-        "grunt-json-server": "~0.1.2",
-    	"grunt": "~0.4.5",
-    	"grunt-contrib-watch": "~0.6.1",
-		"grunt-sass-globbing": "^1.2.0",
-		"postcss": "^5.0.11",
-    	"grunt-postcss": "^0.6.0",
-		"postcss-import": "^7.0.0",
-		"postcss-nested": "^1.0.0np",
-		"autoprefixer": "^6.0.0",
-		"postcss-color-function": "^2.0.0",
-		"postcss-custom-properties": "^5.0.0",
-		"postcss-custom-media": "^5.0.0",
-		"postcss-mixins": "^1.0.0",
-		"postcss-calc": "^5.0.0",
-		"csswring": "^4.0.0",
-		"grunt-babel": "^4.0.0"
+  "name": "kicking_sass",
+  "version": "2.0.0",
+  "repository": "https://github.com/degdigital/kickingsass",
+  "license": "MIT",
+  "engines": {
+    "node": ">=4.2.0"
+  },
+  "devDependencies": {
+    "grunt-json-server": "~0.1.2",
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-sass-globbing": "^1.2.0",
+    "postcss": "^5.0.11",
+    "grunt-postcss": "^0.6.0",
+    "postcss-import": "^7.0.0",
+    "postcss-nested": "^1.0.0np",
+    "autoprefixer": "^6.0.0",
+    "postcss-color-function": "^2.0.0",
+    "postcss-custom-properties": "^5.0.0",
+    "postcss-custom-media": "^5.0.0",
+    "postcss-mixins": "^1.0.0",
+    "postcss-calc": "^5.0.0",
+    "csswring": "^4.0.0",
+    "jspm": "^0.16.13"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "public",
+      "packages": "public/js/jspm_packages"
+    },
+    "configFile": "public/js/config.js",
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
     }
+  }
 }

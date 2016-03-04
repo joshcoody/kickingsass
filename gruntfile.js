@@ -48,21 +48,6 @@ module.exports = function(grunt) {
 		        ]
 		    }
 		},
-		babel: {
-		    dist: {
-		        files: [
-		            {
-		                expand: true,
-		                cwd: "public/source/js",
-		                src: [
-		                    '**/*.js'
-		                ],
-		                dest: "public/js",
-		                ext: '.js'
-		            }
-		        ]
-		    }
-		},
 		watch: {
 			css: {
 		        files: [
@@ -73,15 +58,6 @@ module.exports = function(grunt) {
 		        options: {
 		            "spawn": true
 		        }
-		    },
-		    js: {
-		        files: [
-		        	"public/source/js/**/*.js"
-		        ],
-		        tasks: ["babel"],
-		        options: {
-		            "spawn": true
-		        }
 		    }
 		}
 	});
@@ -89,6 +65,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-sass-globbing');
 	grunt.loadNpmTasks('grunt-postcss');
-	grunt.loadNpmTasks('grunt-babel');
 	grunt.registerTask('default',['watch']);
 };

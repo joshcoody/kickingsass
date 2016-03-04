@@ -56,7 +56,7 @@ module.exports = function(grunt) {
 	                mangle: false
 	            },
                 files: {
-                    "public/js/event-list-bundle.js": "source/js/events.js"
+                    "public/js/eventsListBundle.js": "source/js/events.js"
                 }
             }
 		},

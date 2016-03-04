@@ -1,4 +1,4 @@
-System.registerDynamic("event-list.js", [], false, function($__require, $__exports, $__module) {
+System.registerDynamic("eventsList.js", [], false, function($__require, $__exports, $__module) {
   var _retrieveGlobal = System.get("@@global-helpers").prepareGlobal($__module.id, null, null);
   (function() {
     (function(document, window) {
@@ -172,18 +172,18 @@ System.registerDynamic("event-list.js", [], false, function($__require, $__expor
   return _retrieveGlobal();
 });
 
-System.register("events.js", ["event-list.js"], function (_export) {
+System.register("events.js", ["eventsList.js"], function (_export) {
 	"use strict";
 
-	var eventList, events;
+	var eventsList, events;
 	return {
-		setters: [function (_eventListJs) {
-			eventList = _eventListJs["default"];
+		setters: [function (_eventsListJs) {
+			eventsList = _eventsListJs["default"];
 		}],
 		execute: function () {
 			events = function events() {
 
-				console.log(eventList);
+				console.log(eventsList);
 			};
 
 			_export("default", events);

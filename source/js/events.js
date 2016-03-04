@@ -1,8 +1,8 @@
-import eventList from "event-list";
+import eventsList from "eventsList";
 
 let events = function() {
 
-	console.log(eventList);
+	console.log(eventsList);
 
 };
 

@@ -25,7 +25,7 @@ Update event-list.js, event-detail.js, favorites.js
      Use vanilla JS ajax
      Template strings for error message
      Template strings for templates
-
+     Use forEach where possible
 Run:
      npm install
      grunt

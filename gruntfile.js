@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 		compass: {
 			dist: {
 				options: {
-					sassDir: 'public/source/sass/',
+					sassDir: 'source/sass/',
 					cssDir: 'public/css',
 					outputStyle: 'compressed',
 					require: [
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			css: {
-				files: 'public/source/sass/**/*.scss',
+				files: 'source/sass/**/*.scss',
 				tasks: ['compass']
 			},
 			options: {

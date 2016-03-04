@@ -1,4 +1,4 @@
 node_modules/
 .sass-cache/
 Gemfile.lock
-jspm_packages/
+jspm_packages

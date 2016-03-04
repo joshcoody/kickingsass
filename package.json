@@ -21,6 +21,7 @@
 		"postcss-custom-media": "^5.0.0",
 		"postcss-mixins": "^1.0.0",
 		"postcss-calc": "^5.0.0",
-		"csswring": "^4.0.0"
+		"csswring": "^4.0.0",
+		"grunt-babel": "^4.0.0"
     }
 }

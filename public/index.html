@@ -166,38 +166,6 @@
 			</nav>
 		</div>
 	</footer>
-
-	<script type="text/html" id="event_tmpl">
-		<div class="event" id="<%=id%>">
-			<div class="event__column">
-				<a class="event__favorite-trigger icon--star js-favorite-trigger <%=favoritesTriggerClass%>" href="#"><span>Favorite</span></a>
-				<a class="event__name" href="event-detail.html?eventid=<%=id%>"><%=title%></a>
-				<ul class="event__festival-types">
-					<li class="event__festival-type event__festival-type--<%=festivalType%>"><%=festivalType%></li>
-				</ul>
-			</div>
-			<div class="event__column">
-				<ul class="event__types">
-					<li class="event__types--type"><%=eventTypeDisplay%></li>
-					<li class="event__types--format"><a href="#"><%=format%></a></li>
-					<li class="event__types--category"><%=trackDisplay%></li>
-				</ul>
-			</div>
-			<div class="event__column">
-				<ul class="event__location">
-					<li><a href="#"><%=location1%></a></li>
-					<li><strong><%=location2%></strong></li>
-				</ul>
-			</div>
-			<div class="event__column">
-				<div class="event__date"><%=date%></div>
-				<div class="event__time"><%=time%></div>
-			</div>
-		</div>
-	</script>
-
-	<script src="js/jquery.js"></script>
-	<script src="js/microtemplates.js"></script>
 	<script src="js/event-list.js"></script>
 </body>
 </html>

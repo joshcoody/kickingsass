@@ -48,6 +48,33 @@ module.exports = function(grunt) {
 		        ]
 		    }
 		},
+		jspm: {
+            dist: {
+				options: {
+	                sfx: false,
+	                minify: false,
+	                mangle: false
+	            },
+                files: {
+                    "public/js/event-list-bundle.js": "source/js/events.js"
+                }
+            }
+		},
+		copy: {
+			dist: {
+				files: [
+					{
+						expand: true,
+						flatten: true,
+						src: [
+							'source/js/jspm_packages/system.js',
+							'source/js/config.js'
+						],
+						dest: 'public/js/',
+					}
+				],
+			}
+		},
 		watch: {
 			css: {
 		        files: [
@@ -58,6 +85,17 @@ module.exports = function(grunt) {
 		        options: {
 		            "spawn": true
 		        }
+		    },
+		    js: {
+		        files: [
+		        	"source/js/**/*.js",
+		        	"!source/js/jspm_packages/**/*.js",
+		        	"!source/js/config.js"
+		        ],
+		        tasks: ["jspm", "copy"],
+		        options: {
+		            "spawn": true
+		        }		    	
 		    }
 		}
 	});
@@ -65,5 +103,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-sass-globbing');
 	grunt.loadNpmTasks('grunt-postcss');
+	grunt.loadNpmTasks('grunt-jspm');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.registerTask('default',['watch']);
 };

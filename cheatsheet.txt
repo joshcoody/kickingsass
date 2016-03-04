@@ -8,6 +8,10 @@ Add files/folders:
 
 Remove from index.html, event-detail.html, favorites.html:
      
+Add to package.json:
+     "jspm": "^0.16.13"
+     "grunt-jspm": "^0.1.1"
+     "grunt-contrib-copy": "^0.8.2"
 
 Remove from package.json:
      "grunt-babel": "^4.0.0"
@@ -18,12 +22,11 @@ Remove from gruntfile.js:
      js watch object
 
 Add to gruntfile.js:
+     grunt.loadNpmTasks('grunt-jspm');
+     grunt.loadNpmTasks('grunt-contrib-copy');
+     grunt config object for jspm
+     grunt config object for copy
 
-Add to package.json:
-     "jspm": "^0.16.13"
-
-Remove from package.json:
-     "grunt-babel": "^4.0.0"
 
 Update event-list.js, event-detail.js, favorites.js
      bottom of page system calls

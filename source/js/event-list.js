@@ -86,9 +86,9 @@
 				</div>
 				<div class="event__column">
 					<ul class="event__types">
-						<li class="event__types--type">${event.eventTypeDisplay}</li>
-						<li class="event__types--format"><a href="#">${event.format}</a></li>
-						<li class="event__types--category">${event.trackDisplay}</li>
+						${event.eventTypeDisplay ? `<li class="event__types--type">${event.eventTypeDisplay}</li>` : ''}
+						${event.format ? `<li class="event__types--format"><a href="#">${event.format}</a></li>` : ''}
+						${event.trackDisplay ? `<li class="event__types--category">${event.trackDisplay}</li>` : ''}
 					</ul>
 				</div>
 				<div class="event__column">

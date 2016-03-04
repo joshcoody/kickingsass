@@ -13,9 +13,9 @@ module.exports = function(grunt) {
 		sass_globbing: {
 			dist: {
 				files: {
-					"public/source/css/main.css": [
-						"public/source/css/**/*.css",
-						"!public/source/css/main.css"
+					"source/css/main.css": [
+						"source/css/**/*.css",
+						"!source/css/main.css"
 					]
 				}
 			}
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
 		        files: [
 		            {
 		                expand: false,
-		                src: ["public/source/css/main.css"],
+		                src: ["source/css/main.css"],
 		                dest: "public/css/main.css",
 		                ext: '.css'
 		            }
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 		        files: [
 		            {
 		                expand: true,
-		                cwd: "public/source/js",
+		                cwd: "source/js",
 		                src: [
 		                    '**/*.js'
 		                ],
@@ -66,8 +66,8 @@ module.exports = function(grunt) {
 		watch: {
 			css: {
 		        files: [
-		        	"public/source/css/**/*.css",
-		        	"!public/source/css/main.css"
+		        	"source/css/**/*.css",
+		        	"!source/css/main.css"
 		        ],
 		        tasks: ["sass_globbing","postcss"],
 		        options: {
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
 		    },
 		    js: {
 		        files: [
-		        	"public/source/js/**/*.js"
+		        	"source/js/**/*.js"
 		        ],
 		        tasks: ["babel"],
 		        options: {

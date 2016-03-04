@@ -1,4 +1,4 @@
-(function(document, window) {
+let eventDetail = function() {
 
 	let eventsUrl = 'http://localhost:5555/events/',
 		presentersUrl = 'http://localhost:5555/presenters/',
@@ -16,8 +16,9 @@
 	};
 
 	function getAjaxData(url, callback, id) {
-		let id = typeof id !== 'undefined' ? id : '',
-			request = new XMLHttpRequest();
+		id = typeof id !== 'undefined' ? id : '';
+		
+		let request = new XMLHttpRequest();
 		request.open('GET', url + id, true);
 
 		request.onload = function() {
@@ -186,4 +187,6 @@
 
 	init();
 
-})(document, window);
+};
+
+export default eventDetail;

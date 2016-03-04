@@ -1,4 +1,4 @@
-(function(document, window) {
+let eventsList = function() {
 
 	let eventsUrl = 'http://localhost:5555/events/',
 		ajaxErrorMsg = 'There was an error retrieving events info. Please try again.',
@@ -173,4 +173,6 @@
 
     init();
 
-})(document, window);
+};
+
+export default eventsList;

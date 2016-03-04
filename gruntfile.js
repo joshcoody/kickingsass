@@ -53,10 +53,13 @@ module.exports = function(grunt) {
 				options: {
 	                sfx: false,
 	                minify: false,
-	                mangle: false
+	                mangle: false,
+	                inject: true
 	            },
                 files: {
-                    "public/js/eventsListBundle.js": "source/js/events.js"
+                    "source/js/eventsListBundle.js": "source/js/events.js",
+                    "source/js/eventDetailBundle.js": "source/js/detail.js",
+                    "source/js/favoritesListBundle.js": "source/js/favorites.js"
                 }
             }
 		},
@@ -68,7 +71,10 @@ module.exports = function(grunt) {
 						flatten: true,
 						src: [
 							'source/js/jspm_packages/system.js',
-							'source/js/config.js'
+							'source/js/config.js',
+							'source/js/eventsListBundle.js',
+							'source/js/eventDetailBundle.js',
+							'source/js/favoritesListBundle.js'
 						],
 						dest: 'public/js/',
 					}

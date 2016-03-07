@@ -3,9 +3,6 @@ Step 4:
 Stop:
      watch task
 
-Add files/folders:
-     
-
 Remove from index.html, event-detail.html, favorites.html:
      
 Add to package.json:
@@ -27,11 +24,14 @@ Add to gruntfile.js:
      grunt config object for jspm
      grunt config object for copy
 
-
-Update event-list.js, event-detail.js, favorites.js
+Update event-list., event-detail.js, favorites.js
      bottom of page system calls
+
+Update eventsList.js, eventDetail.js, favoritesList.js
+     local modules
+     DEGJS fetchUtils module
 
 Run:
      npm install
-     grunt
      jspm install
+     grunt

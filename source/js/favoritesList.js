@@ -1,4 +1,5 @@
 import domUtils from "domUtils";
+import fetchUtils from "DEGJS/fetchUtils";
 
 let favoritesList = function() {
 
@@ -17,27 +18,18 @@ let favoritesList = function() {
 	};
 
 	function getAjaxData(url, callback) {
-		let request = new XMLHttpRequest();
-		request.open('GET', url, true);
-
-		request.onload = function() {
-			if (request.status >= 200 && request.status < 400) {
-				let data = JSON.parse(request.responseText);
-				if (data.length > 0) {
-					callback(data);
-				} else {
-					renderError(noResultsMsg);
-				}
+		fetchUtils.getJSON({
+			'url': url,
+			'method': 'GET'
+		}).then(function(data) {
+			if (data.length > 0) {
+				callback(data);
 			} else {
-				renderError(ajaxErrorMsg);
+				renderError(noResultsMsg);
 			}
-		};
-
-		request.onerror = function() {
+		}).catch(function(error) {
 			renderError(ajaxErrorMsg);
-		};
-
-		request.send();
+		});
 	};
 
 	function renderEvent(events) {

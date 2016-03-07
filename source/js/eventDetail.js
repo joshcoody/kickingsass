@@ -1,5 +1,6 @@
 import urlUtils from "urlUtils";
 import domUtils from "domUtils";
+import fetchUtils from "DEGJS/fetchUtils";
 
 let eventDetail = function() {
 
@@ -19,27 +20,18 @@ let eventDetail = function() {
 	};
 
 	function getAjaxData(url, callback, id = '') {
-		let request = new XMLHttpRequest();
-		request.open('GET', url + id, true);
-
-		request.onload = function() {
-			if (request.status >= 200 && request.status < 400) {
-				let data = JSON.parse(request.responseText);
-				if (data) {
-					callback(data);
-				} else {
-					renderError(ajaxErrorMsg);
-				}
+		fetchUtils.getJSON({
+			'url': url + id,
+			'method': 'GET'
+		}).then(function(data) {
+			if (data) {
+				callback(data);
 			} else {
 				renderError(ajaxErrorMsg);
 			}
-		};
-
-		request.onerror = function() {
-		  renderError(ajaxErrorMsg);
-		};
-
-		request.send();
+		}).catch(function(error) {
+			renderError(ajaxErrorMsg);
+		});
 	};
 
 	function renderEvent(data) {

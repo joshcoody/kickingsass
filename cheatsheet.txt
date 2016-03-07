@@ -2,8 +2,6 @@ Step 4:
 
 Stop:
      watch task
-
-Remove from index.html, event-detail.html, favorites.html:
      
 Add to package.json:
      "jspm": "^0.16.13"

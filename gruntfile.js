@@ -10,16 +10,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		sass_globbing: {
-			dist: {
-				files: {
-					"source/css/main.css": [
-						"source/css/**/*.css",
-						"!source/css/main.css"
-					]
-				}
-			}
-		},
 		postcss: {
 			dist: {
 				options: {
@@ -84,10 +74,9 @@ module.exports = function(grunt) {
 		watch: {
 			css: {
 		        files: [
-		        	"source/css/**/*.css",
-		        	"!source/css/main.css"
+		        	"source/css/**/*.css"
 		        ],
-		        tasks: ["sass_globbing","postcss"],
+		        tasks: ["postcss"],
 		        options: {
 		            "spawn": true
 		        }
@@ -107,7 +96,6 @@ module.exports = function(grunt) {
 	});
 	grunt.loadNpmTasks('grunt-json-server');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-sass-globbing');
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-jspm');
 	grunt.loadNpmTasks('grunt-contrib-copy');

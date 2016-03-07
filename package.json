@@ -10,7 +10,6 @@
     "grunt-json-server": "~0.1.2",
     "grunt": "~0.4.5",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-sass-globbing": "^1.2.0",
     "postcss": "^5.0.11",
     "grunt-postcss": "^0.6.0",
     "postcss-import": "^7.0.0",

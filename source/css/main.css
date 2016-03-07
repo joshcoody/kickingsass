@@ -1,19 +1,17 @@
-/* generated with grunt-sass-globbing */
-
-@import "./00reset";
-@import "./01variables";
-@import "./02mixins";
-@import "./app-bar";
-@import "./buttons";
-@import "./details";
-@import "./event-detail";
-@import "./events";
-@import "./filters";
-@import "./footer";
-@import "./icons";
-@import "./layout";
-@import "./logo";
-@import "./presenter";
-@import "./search";
-@import "./text";
-@import "./utilities";
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "app-bar";
+@import "buttons";
+@import "details";
+@import "event-detail";
+@import "events";
+@import "filters";
+@import "footer";
+@import "icons";
+@import "layout";
+@import "logo";
+@import "presenter";
+@import "search";
+@import "text";
+@import "utilities";

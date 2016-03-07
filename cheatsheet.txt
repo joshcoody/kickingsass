@@ -24,7 +24,7 @@ Add to gruntfile.js:
      grunt config object for jspm
      grunt config object for copy
 
-Update event-list., event-detail.js, favorites.js
+Update index.html, event-detail.html, favorites.html
      bottom of page system calls
 
 Update eventsList.js, eventDetail.js, favoritesList.js

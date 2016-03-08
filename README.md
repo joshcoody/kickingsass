@@ -26,3 +26,38 @@ Also, make sure you have:
 * A text editor
 * A terminal
 * Admin rights to your computer
+
+## Step 2 Instructions
+In (roughly) this order, complete the following to advance to Step 3:
+
+1. **Stop:**
+    * watch task
+
+2. **Delete files/folders:**
+    * public/js/jquery.js
+    * public/js/microtemplates.js
+
+3. **Add files/folders:**
+    * Move js files to /source/js
+
+4. **Remove from index.html, event-detail.html, favorites.html:**
+    * jQuery reference at bottom of page
+    * microtemplates reference at bottom of page
+
+5. **Add to package.json:**
+    * "grunt-babel": "^4.0.0"
+
+6. **Add to gruntfile.js:**
+    * Babel config object
+    * grunt.loadNpmTasks('grunt-babel');
+
+7. **Update event-list.js, event-detail.js, favorites.js**
+    * Replace $ with document.querySelector()
+    * Use vanilla JS ajax
+    * Template strings for error message
+    * Template strings for templates
+    * Use forEach where possible
+
+8. **Run:**
+    * npm install
+    * grunt

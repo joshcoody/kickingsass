@@ -2,7 +2,3 @@
 node_modules/
 .sass-cache/
 Gemfile.lock
-source/js/jspm_packages/
-source/js/config.js
-public/js/config.js
-public/js/system.js

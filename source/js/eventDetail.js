@@ -1,5 +1,5 @@
-import urlUtils from "urlUtils";
-import domUtils from "domUtils";
+import urlUtils from "utils/urlUtils";
+import domUtils from "utils/domUtils";
 import fetchUtils from "DEGJS/fetchUtils";
 
 let eventDetail = function() {
@@ -166,4 +166,4 @@ let eventDetail = function() {
 
 };
 
-export default eventDetail;
+export default eventDetail();

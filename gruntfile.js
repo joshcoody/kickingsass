@@ -47,9 +47,9 @@ module.exports = function(grunt) {
 	                inject: true
 	            },
                 files: {
-                    "source/js/eventsListBundle.js": "source/js/events.js",
-                    "source/js/eventDetailBundle.js": "source/js/detail.js",
-                    "source/js/favoritesListBundle.js": "source/js/favorites.js"
+                    "source/js/eventsListBundle.js": "source/js/eventsList.js",
+                    "source/js/eventDetailBundle.js": "source/js/eventDetail.js",
+                    "source/js/favoritesListBundle.js": "source/js/favoritesList.js"
                 }
             }
 		},
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
 							'source/js/eventDetailBundle.js',
 							'source/js/favoritesListBundle.js'
 						],
-						dest: 'public/js/',
+						dest: 'public/js/'
 					}
 				],
 			}

@@ -1,4 +1,4 @@
-import domUtils from "domUtils";
+import domUtils from "utils/domUtils";
 import fetchUtils from "DEGJS/fetchUtils";
 
 let favoritesList = function() {
@@ -86,4 +86,4 @@ let favoritesList = function() {
 
 };
 
-export default favoritesList;
+export default favoritesList();

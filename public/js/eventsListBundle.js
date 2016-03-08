@@ -1,4 +1,4 @@
-System.register('domUtils.js', [], function (_export) {
+System.register('utils/domUtils.js', [], function (_export) {
     'use strict';
 
     var domUtils;
@@ -1708,13 +1708,13 @@ System.register("github:DEGJS/fetchUtils@master.js", ["github:DEGJS/fetchUtils@m
   };
 });
 
-System.register("eventsList.js", ["domUtils.js", "github:DEGJS/fetchUtils@master.js"], function (_export) {
+System.register("eventsList.js", ["utils/domUtils.js", "github:DEGJS/fetchUtils@master.js"], function (_export) {
 	"use strict";
 
 	var domUtils, fetchUtils, eventsList;
 	return {
-		setters: [function (_domUtilsJs) {
-			domUtils = _domUtilsJs["default"];
+		setters: [function (_utilsDomUtilsJs) {
+			domUtils = _utilsDomUtilsJs["default"];
 		}, function (_githubDEGJSFetchUtilsMasterJs) {
 			fetchUtils = _githubDEGJSFetchUtilsMasterJs["default"];
 		}],
@@ -1841,22 +1841,7 @@ System.register("eventsList.js", ["domUtils.js", "github:DEGJS/fetchUtils@master
 				init();
 			};
 
-			_export("default", eventsList);
+			_export("default", eventsList());
 		}
 	};
-});
-
-System.register("events.js", ["eventsList.js"], function (_export) {
-  "use strict";
-
-  var eventsList;
-  return {
-    setters: [function (_eventsListJs) {
-      eventsList = _eventsListJs["default"];
-    }],
-    execute: function () {
-
-      eventsList();
-    }
-  };
 });

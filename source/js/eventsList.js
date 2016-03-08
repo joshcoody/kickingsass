@@ -1,4 +1,4 @@
-import domUtils from "domUtils";
+import domUtils from "utils/domUtils";
 import fetchUtils from "DEGJS/fetchUtils";
 
 let eventsList = function() {
@@ -145,8 +145,8 @@ let eventsList = function() {
 		localStorage.setItem('kickingsass_favorites', JSON.stringify(savedFavorites));
 	};
 
-    init();
+	init();
 
 };
 
-export default eventsList;
+export default eventsList();

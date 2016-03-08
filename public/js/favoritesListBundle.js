@@ -1,4 +1,4 @@
-System.register('domUtils.js', [], function (_export) {
+System.register('utils/domUtils.js', [], function (_export) {
     'use strict';
 
     var domUtils;
@@ -1708,13 +1708,13 @@ System.register("github:DEGJS/fetchUtils@master.js", ["github:DEGJS/fetchUtils@m
   };
 });
 
-System.register("favoritesList.js", ["domUtils.js", "github:DEGJS/fetchUtils@master.js"], function (_export) {
+System.register("favoritesList.js", ["utils/domUtils.js", "github:DEGJS/fetchUtils@master.js"], function (_export) {
 	"use strict";
 
 	var domUtils, fetchUtils, favoritesList;
 	return {
-		setters: [function (_domUtilsJs) {
-			domUtils = _domUtilsJs["default"];
+		setters: [function (_utilsDomUtilsJs) {
+			domUtils = _utilsDomUtilsJs["default"];
 		}, function (_githubDEGJSFetchUtilsMasterJs) {
 			fetchUtils = _githubDEGJSFetchUtilsMasterJs["default"];
 		}],
@@ -1778,22 +1778,7 @@ System.register("favoritesList.js", ["domUtils.js", "github:DEGJS/fetchUtils@mas
 				init();
 			};
 
-			_export("default", favoritesList);
+			_export("default", favoritesList());
 		}
 	};
-});
-
-System.register("favorites.js", ["favoritesList.js"], function (_export) {
-  "use strict";
-
-  var favoritesList;
-  return {
-    setters: [function (_favoritesListJs) {
-      favoritesList = _favoritesListJs["default"];
-    }],
-    execute: function () {
-
-      favoritesList();
-    }
-  };
 });

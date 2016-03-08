@@ -85,7 +85,8 @@ module.exports = function(grunt) {
 		        files: [
 		        	"source/js/**/*.js",
 		        	"!source/js/jspm_packages/**/*.js",
-		        	"!source/js/config.js"
+		        	"!source/js/config.js",
+		        	"!source/js/*Bundle.js"
 		        ],
 		        tasks: ["jspm", "copy"],
 		        options: {

@@ -31,7 +31,7 @@ Also, make sure you have:
 In (roughly) this order, complete the following steps to advance to Step 4:
 
 * **Stop:**
-     watch task
+    * watch task
 * **Add to package.json:**
     * "jspm": "^0.16.13"
     * "grunt-jspm": "^0.1.1"

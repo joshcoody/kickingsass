@@ -37,7 +37,7 @@ In (roughly) this order, complete the following steps to advance to Step 4:
     * "grunt-jspm": "^0.1.1"
     * "grunt-contrib-copy": "^0.8.2"
 * **Remove from package.json:**
-    *"grunt-babel": "^4.0.0"
+    * "grunt-babel": "^4.0.0"
 * **Remove from gruntfile.js:**
     * Babel config object
     * grunt.loadNpmTasks('grunt-babel');

@@ -28,7 +28,7 @@ Also, make sure you have:
 * Admin rights to your computer
 
 ## Step 2 Instructions
-In (roughly) this order, complete the following to advance to Step 3:
+In (roughly) this order, complete the following steps to advance to Step 3:
 
 1. **Stop:**
     * watch task

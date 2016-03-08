@@ -30,29 +30,29 @@ Also, make sure you have:
 ## Step 3 Instructions
 In (roughly) this order, complete the following steps to advance to Step 4:
 
-* **Stop:**
+1. **Stop:**
     * watch task
-* **Add to package.json:**
+2. **Add to package.json:**
     * "jspm": "^0.16.13"
     * "grunt-jspm": "^0.1.1"
     * "grunt-contrib-copy": "^0.8.2"
-* **Remove from package.json:**
+3. **Remove from package.json:**
     * "grunt-babel": "^4.0.0"
-* **Remove from gruntfile.js:**
+4. **Remove from gruntfile.js:**
     * Babel config object
     * grunt.loadNpmTasks('grunt-babel');
     * js watch object
-* **Add to gruntfile.js:**
+5. **Add to gruntfile.js:**
     * grunt.loadNpmTasks('grunt-jspm');
     * grunt.loadNpmTasks('grunt-contrib-copy');
     * grunt config object for jspm
     * grunt config object for copy
-* **Update index.html, event-detail.html, favorites.html:**
+6. **Update index.html, event-detail.html, favorites.html:**
     * bottom of page system calls
-* **Update eventsList.js, eventDetail.js, favoritesList.js**
+7. **Update eventsList.js, eventDetail.js, favoritesList.js**
     * local modules
     * DEGJS fetchUtils module
-* **Run:**
+8. **Run:**
     * npm install
     * jspm install:
         * prefix package.json: default (yes)

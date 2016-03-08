@@ -15,7 +15,6 @@ If at any time you lose your place, just check out the corresponding branch to c
 ## Software Requirements
 
 In order to follow along with the workshop sample project, you will need to have installed:
-
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/en/)
 

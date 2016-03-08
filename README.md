@@ -38,25 +38,20 @@ In (roughly) this order, complete the following steps to advance to Step 4:
     * "grunt-contrib-copy": "^0.8.2"
 * **Remove from package.json:**
     *"grunt-babel": "^4.0.0"
-
 * **Remove from gruntfile.js:**
     * Babel config object
     * grunt.loadNpmTasks('grunt-babel');
     * js watch object
-
 * **Add to gruntfile.js:**
     * grunt.loadNpmTasks('grunt-jspm');
     * grunt.loadNpmTasks('grunt-contrib-copy');
     * grunt config object for jspm
     * grunt config object for copy
-
 * **Update index.html, event-detail.html, favorites.html:**
     * bottom of page system calls
-
 * **Update eventsList.js, eventDetail.js, favoritesList.js**
     * local modules
     * DEGJS fetchUtils module
-
 * **Run:**
     * npm install
     * jspm install:

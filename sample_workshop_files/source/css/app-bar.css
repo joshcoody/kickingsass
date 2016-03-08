@@ -1,0 +1,112 @@
+.app-bar {
+	background-color: var(--color-gray-darker);
+	padding: 1rem 0;
+
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__nav {
+		align-self: center;
+	}
+
+	&__nav-list {
+		@mixin list-bare;
+		overflow: hidden;
+	}
+
+	&__nav-link {
+		color: var(--color-offwhite);
+		display: block;
+		padding: 0;
+		@mixin transition color;
+
+		&:hover {
+			color: var(--color-teal);
+		}
+	}
+
+	&__schedule {
+
+		.button {
+			float: right;
+		}
+
+	}
+
+	&__schedule-list {
+		display: inline-block;
+		list-style: disc;
+		margin: 0 0 1rem;
+		text-align: right;
+	}
+
+	&__schedule-item {
+		display: inline-block;
+		font-size: 0.875rem;
+		font-weight: 700;
+		text-transform: uppercase;
+
+		&:nth-child(1) {
+			color: var(--color-orange);
+		}
+
+		&:nth-child(2) {
+			color: var(--color-blue);
+
+		}
+
+		&:nth-child(3) {
+			color: var(--color-green);
+
+		}
+
+	}
+
+}
+
+@media screen and (--medium) {
+
+	.app-bar {
+
+		&__nav-list-item {
+			display: inline;
+			float: left;
+
+			&:first-child a {
+				padding-left: 0;
+			}
+
+		}
+
+		&__nav-link {
+			padding: 0 0.625rem;
+		}
+
+		&__schedule {
+
+			.button {
+				float: none;
+				margin-left: 2rem;
+			}
+
+		}
+
+		&__schedule-list {
+			margin: 0;
+			text-align: left;
+		}
+
+		&__schedule-item {
+			margin-left: 1rem;
+
+			&:nth-child(1) {
+				margin-left: 0;
+			}
+
+		}
+
+	}
+
+}

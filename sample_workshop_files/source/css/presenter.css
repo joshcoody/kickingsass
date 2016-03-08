@@ -1,0 +1,36 @@
+.presenter {
+	border-bottom: 0.125rem solid var(--color-gray-lighter);
+	overflow: hidden;
+	padding: 2rem 0;
+
+	&__image {
+		border-radius: 50%;
+		float: left;
+		margin-right: 1rem;
+	}
+
+	&__content {
+		overflow: hidden;
+	}
+
+	&__name {
+		font-family: var(--font-family-primary);
+		font-size: 1.125rem;
+		font-weight: 700;
+		margin: 0;
+	}
+
+	&__title,
+	&__location {
+		color: var(--color-gray);
+		font-size: 0.8125rem;
+		font-weight: 700;
+		margin: 0;
+	}
+
+	&__description {
+		color: var(--color-gray);
+		font-size: 0.8125rem;
+	}
+
+}

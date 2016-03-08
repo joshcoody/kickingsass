@@ -1,0 +1,30 @@
+.button {
+	background-color: var(--color-gray-light);
+	color: var(--color-gray);
+	display: inline-block;
+	font-family: var(--font-family-primary);
+	font-size: 1.125rem;
+	line-height: 1;
+	padding: 0.625rem 2.375rem;
+
+	&--user {
+		background-color: var(--color-gray-dark);
+		color: var(--color-white);
+
+		&:before {
+			content: "\e900";
+			font-family: var(--font-family-icons);
+			font-size: 1rem;
+			margin-right: 0.75rem;
+			position: relative;
+			top: 0.0625rem;
+		}
+
+	}
+
+	&--blue {
+		background-color: var(--color-teal);
+		color: var(--color-white);
+	}
+
+}

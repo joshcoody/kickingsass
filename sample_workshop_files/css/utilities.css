@@ -1,0 +1,32 @@
+.utilities {
+	display: none;
+}
+
+@media screen and (--medium) {
+
+	.utilities {
+		display: block;
+		float: right;
+
+		&__favorites-link {
+			color: var(--color-gray-light);
+			display: block;
+			font-size: 1.125rem;
+			margin-top: 0.5rem;
+			@mixin transition color;
+
+			&:hover {
+				color: var(--color-gray);
+			}
+
+			.icon--star {
+				display: inline-block;
+				margin-right: 0.5rem;
+				vertical-align: baseline;
+			}
+
+		}
+
+	}
+
+}

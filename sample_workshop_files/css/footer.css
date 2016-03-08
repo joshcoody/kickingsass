@@ -1,0 +1,42 @@
+.footer {
+	background-color: var(--color-gray-dark);
+	color: var(--color-white);
+	font-size: 0.75rem;
+	padding: 3rem 0;
+	text-align: center;
+
+	&__nav-list {
+		@mixin list-bare;
+	}
+
+	&__nav-list-item {
+		display: inline-block;
+
+		&:last-child a {
+			border: 0;
+		}
+
+	}
+
+	&__nav-link {
+		border-right: 0.0625rem solid var(--color-gray-light);
+		color: var(--color-white);
+		display: inline-block;
+		font-size: 0.75rem;
+		line-height: 1;
+		padding: 0 0.375rem;
+		@mixin transition color;
+
+		&:hover {
+			color: var(--color-teal);
+		}
+
+	}
+
+}
+
+.disclaimer {
+	line-height: 1.6;
+	margin: 0 auto 1.5rem;
+	max-width: 47rem;
+}

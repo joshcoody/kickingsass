@@ -1,0 +1,154 @@
+.events {
+	margin-bottom: 6rem;
+
+	&__group-header {
+		background-color: var(--color-gray-light);
+		color: var(--color-gray-darker);
+		font-weight: 700;
+		padding: 0.75rem;
+		text-align: center;
+	}
+
+}
+
+.event {
+	background-color: var(--color-offwhite);
+	border-bottom: 0.25rem solid var(--color-gray-lighter);
+
+	&:last-child {
+		border-bottom: 0;
+	}
+
+	&__column {
+		font-size: 0.875rem;
+		padding: 1.5rem;
+		position: relative;
+		text-align: center;
+		width: calc(100% / 6);
+
+		&:after {
+			background-color: var(--color-gray-lighter);
+			content: "";
+			display: block;
+			height: calc(100% - 2.25rem);
+			margin: 1.125rem 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 0.0625rem;
+		}
+
+		&:first-child {
+			padding-left: 4.5rem;
+			text-align: left;
+			width: 50%;
+		}
+
+		&:last-child {
+
+			&:after {
+				display: none;
+			}
+
+		}
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+
+	}
+
+	&__favorite-trigger {
+		color: var(--color-gray-light);
+		font-size: 2rem;
+		left: 1.5rem;
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+		@mixin transition color;
+
+		&:hover {
+			color: var(--color-gray);
+		}
+
+		&.is-active {
+			color: var(--color-gold);
+
+			&:hover {
+				color: var(--color-gold);
+			}
+
+		}
+
+		span {
+			display: none;
+		}
+
+	}
+
+	&__name {
+		display: block;
+		font-family: var(--font-family-secondary);
+		font-size: 1.125rem;
+		font-weight: 700;
+		margin-bottom: 0.25rem;
+	}
+
+	&__festival-types {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+		}
+
+	}
+
+	&__festival-type {
+		border-radius: 50%;
+		color: var(--color-white);
+		display: block;
+		font-size: 0.625rem;
+		height: 0.8125rem;
+		line-height: 1.5;
+		text-align: center;
+		width: 0.875rem;
+		
+		&--I {
+			background-color: var(--color-orange);
+		}
+
+		&--M {
+			background-color: var(--color-green);
+		}
+
+		&--F {
+			background-color: var(--color-blue);			
+		}
+
+	}
+
+	&__types {
+
+		&--type {
+			font-weight: 700;
+		}
+
+	}
+
+	&__time {
+		font-weight: 700;
+	}
+
+}
+
+@media screen and (--medium) {
+
+	.event {
+		display: flex;
+	}
+
+}

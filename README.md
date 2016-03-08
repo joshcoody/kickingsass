@@ -26,3 +26,62 @@ Also, make sure you have:
 * A text editor
 * A terminal
 * Admin rights to your computer
+
+## Step 1 Instructions
+In (roughly) this order, complete the following steps to advance to Step 2:
+
+1. **Stop:**
+    * watch task
+2. **Delete files:**
+    * Gemfile
+    * Gemfile.lock
+3. **Empty files:**
+    * /public/css/main.css
+4. **Add files:**
+    * Manually add a reset.css file to /source/css (https://necolas.github.io/normalize.css/3.0.3/normalize.css)
+    * Manually add a mixins.css file to /source/css
+5. **Rename files/folders:**
+    * /source/sass directory to /source/css
+    * All /source/css file extensions to .css
+    * All /source/css files should not have "_" before file name
+    * Make sure /source/css/reset.css is reset.css
+6. **Change in package.json:**
+    * "version": "2.0.0"
+7. **Remove from package.json:**
+    * "grunt-contrib-compass": "~1.1.0"
+8. **Add to package.json:**
+    * "postcss": "^5.0.11"
+    * "grunt-postcss": "^0.6.0"
+    * "postcss-import": "^7.0.0"
+    * "postcss-nested": "^1.0.0np"
+    * "autoprefixer": "^6.0.0"
+    * "postcss-color-function": "^2.0.0"
+    * "postcss-custom-properties": "^5.0.0"
+    * "postcss-custom-media": "^5.0.0"
+    * "postcss-mixins": "^1.0.0"
+    * “postcss-calc”: “^5.0.0"
+    * "csswring": "^4.0.0"
+9. **Remove from gruntfile.js:**
+    * entire compass config object
+    * empty out watch tasks array
+    * grunt.loadNpmTasks('grunt-contrib-compass');
+10. **Add to gruntfile.js:**
+    * postcss object
+    * grunt.loadNpmTasks('grunt-postcss');
+11. **Update in gruntfile.js:**
+    * watch task
+12. **Update in /source/css/main.css:**
+	* Change all @import statement names    
+12. **Update in all CSS files:**
+    * Change all variable names from $varname to --varname, scoped to root
+    * Change all variable references to var(--varname)
+    * Change all vendor prefix compass mixins to native css rule
+    * Change all timing references to timing variable
+    * Set up mixin for color transition
+    * Set up mixin for list-bare
+    * Add variable for media query
+    * Apply media query variable to all stylesheets
+    * Add calc'ed timing variable
+13. **Run:**
+    * npm install
+    * grunt

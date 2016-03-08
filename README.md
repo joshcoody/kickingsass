@@ -26,3 +26,47 @@ Also, make sure you have:
 * A text editor
 * A terminal
 * Admin rights to your computer
+
+## Step 3 Cheat Sheet
+In (roughly) this order, complete the following to advance to Step 4:
+
+* **Stop:**
+     watch task
+* **Add to package.json:**
+    * "jspm": "^0.16.13"
+    * "grunt-jspm": "^0.1.1"
+    * "grunt-contrib-copy": "^0.8.2"
+* **Remove from package.json:**
+    *"grunt-babel": "^4.0.0"
+
+* **Remove from gruntfile.js:**
+    * Babel config object
+    * grunt.loadNpmTasks('grunt-babel');
+    * js watch object
+
+* **Add to gruntfile.js:**
+    * grunt.loadNpmTasks('grunt-jspm');
+    * grunt.loadNpmTasks('grunt-contrib-copy');
+    * grunt config object for jspm
+    * grunt config object for copy
+
+* **Update index.html, event-detail.html, favorites.html:**
+    * bottom of page system calls
+
+* **Update eventsList.js, eventDetail.js, favoritesList.js**
+    * local modules
+    * DEGJS fetchUtils module
+
+* **Run:**
+    * npm install
+    * jspm install:
+        * prefix package.json: default (yes)
+        * server baseURL: source/js
+        * jspm packages folder: default (source/js/jspm_packages)
+        * config file path: default (source/js/config.js)
+        * Configuration file source/js/config.js doesn't exist, create it? default (yes)
+        * Enter client baseURL: js
+        * Do you wish to use a transpiler? default (yes)
+        * Which ES6 transpiler would you like to use, Babel, TypeScript or Traceur? default (babel)
+    * jspm install github:DEGJS/fetchUtils
+    * grunt

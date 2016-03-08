@@ -27,7 +27,7 @@ Also, make sure you have:
 * A terminal
 * Admin rights to your computer
 
-## Step 3 Cheat Sheet
+## Step 3 Instructions
 In (roughly) this order, complete the following to advance to Step 4:
 
 * **Stop:**

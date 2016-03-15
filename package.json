@@ -1,18 +1,18 @@
 {
-	"name": "kicking_sass",
-	"version": "1.0.0",
-	"repository": "https://github.com/degdigital/kickingsass",
-	"license": "MIT",
-	"engines": {
-		"node": ">=4.2.0"
-	},
-	"scripts": {
-		"preinstall": "npm install -g jspm"
-	},
-	"devDependencies": {
-        "grunt-json-server": "~0.1.2",
-    	"grunt": "~0.4.5",
-    	"grunt-contrib-compass": "~1.1.0",
-    	"grunt-contrib-watch": "~0.6.1"
-    }
+  "name": "kicking_sass",
+  "version": "1.0.0",
+  "repository": "https://github.com/degdigital/kickingsass",
+  "license": "MIT",
+  "engines": {
+    "node": ">=4.2.0"
+  },
+  "scripts": {
+    "preinstall": "npm install -g jspm"
+  },
+  "devDependencies": {
+    "grunt-json-server": "~0.1.2",
+    "grunt": "~0.4.5",
+    "grunt-contrib-compass": "~1.1.0",
+    "grunt-contrib-watch": "~0.6.1"
+  }
 }
